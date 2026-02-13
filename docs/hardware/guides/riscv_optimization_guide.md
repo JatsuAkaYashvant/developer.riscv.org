@@ -197,7 +197,7 @@ lui  a0, 1
 addiw a0, a0, 1
 ```
 
-The LUI instruction stores the top 20 bits of the constant (1 << 12 = 4096) into a0 and the ADDIW instruction supplies the bottom 12 bits, adding 1 and yielding the expected result.
+The LUI instruction stores the top 20 bits of the constant `(1 << 12 = 4096)` into a0 and the ADDIW instruction supplies the bottom 12 bits, adding 1 and yielding the expected result.
 
 There is one complication with this instruction sequence that occurs when the 12th bit of the constant to be materialized is set. This is an issue as the immediate argument of the ADDIW instruction is a 12 bit signed number and so cannot encode a 12 bit unsigned number. In this case the immediate value encoded in the ADDIW instruction is formed by subtracting 4096 from the bottom 12 bits of the constant and by adding 1 to the constant passed to the LUI instruction ( which adds 4096 ). For example, to encode the constant 0x1ffffff, the following sequence can be used.
 
