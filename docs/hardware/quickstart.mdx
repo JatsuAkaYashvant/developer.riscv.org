@@ -3,3 +3,66 @@ title: Get Started
 id: quickstart
 sidebar_position: 2
 ---
+
+As a hardware designer, you can leverage RISC-V’s flexible ISA to create customized, energy-efficient processors tailored to specific application requirements, fostering innovation across different industries.
+
+Designing to RISC-V specifications can be performed using the processes and tools of your choice.  Suggestions for the common design steps are shown below.
+
+### **1\. Prepare**
+
+1. [Become a Member](https://riscv.org/members/join/) to unlock access to  and collaborate with RISC-V experts and complete the “New Member” journey.  Because RISC-V is an open ISA standard, this step is optional but should be strongly considered as a way to both contribute to the broader community and get assistance in your journey.   
+2. Join the [ISA Dev mailing list](https://groups.google.com/a/groups.riscv.org/g/isa-dev) as a resource for asking questions as they arise.  This list is open to non-members.   
+3. As a RISC-V member, you may review and engage with these [active RISC-V Groups](https://lf-riscv.atlassian.net/wiki/spaces/HOME/pages/16154847/RISC-V+Active+ICs+HCs+SIGs+and+TGs).  
+4. Locate relevant reference information:  
+* ISA [Ratified Specifications](https://riscv.org/specifications/ratified/)  
+* [Non-ISA Hardware Specifications](https://riscv.org/specifications/ratified/)
+
+### **2\. Learn**
+
+Ensuring that you are ready to begin your RISC-V journey begins with education.  See the following classesitems to grow your skills.
+
+1. Enroll in the Free [Building a RISC-V CPU Core](https://www.edx.org/learn/design/the-linux-foundation-building-a-risc-v-cpu-core) Course (free)  
+2. [Computer Architecture with an Industrial RISC-V Core](https://www.edx.org/learn/computer-programming/the-linux-foundation-computer-architecture-with-an-industrial-risc-v-core?utm_medium=partner-marketing&utm_source=affiliate&utm_campaign=lftraining&utm_content=landingpage-lfd119x?utm_medium=partner-marketing&utm_source=social&utm_campaign=lftraining&utm_content=linkedin-lfd119x) Course (free)  
+3. [Foundations of RISC-V Assembly Programming](https://training.linuxfoundation.org/training/foundations-of-risc-v-assembly-programming-lfd117x/?__hstc=98396288.31e99bb3db73c51fe7c3d53692690bdc.1726239132912.1755086315391.1755106072744.154&__hssc=98396288.1.1755106072744&__hsfp=3474073941) Course (free).
+
+### **3\. Locate Resources**
+
+The following resources play a role in RISC-V SOC development:
+
+#### **Existing Cores**
+
+* Many companies offer RISC-V building blocks see the [RISC-V Exchange](https://riscv.org/exchange/) or the Implementation section of [RISC-V Landscape](https://landscape.riscv.org/) for more information.  
+* RISC-V also works closely with the [OpenHW Foundation](https://openhwfoundation.org/) which has [open source RISC-V implementations](https://github.com/openhwgroup/core-v-cores).
+
+#### **Design Tools**
+
+* Discover hardware design technologies and tools from our member ecosystem in the [RISC-V Landscape](https://riscv.org/risc-v-landscape/).
+
+### **4\. Start Designing**
+
+Integrate the RISC-V resources into your development process to complete your RISC-V design.
+
+### **5\. Verifying your Design**
+
+Verification of RISC-V processors follows industry best practices for processor development.  Use the simulator and tests in this section while verifying your work.
+
+Please note, the Architecture Compatibility Tests perform compatibility testing  against the standard and provide a valuable supplement to verification tests.  These tests do not verify the functional correctness of your product.
+
+#### **ISA Simulators**
+
+* **Golden Model Simulator**: The primary simulator written in the formal specification language of Sail.  Development of the open source [sail-riscv](https://github.com/riscv/sail-riscv) GitHub project is coordinated by the [Tech Golden Model group (Members Only)](https://lists.riscv.org/g/tech-golden-model).  Simulator binaries can be found [here](https://github.com/riscv/sail-riscv/releases).  
+* **Spike**: Another open source RISC-V simulator hosted in the [riscv-isa-sim](https://github.com/riscv-software-src/riscv-isa-sim) GitHub project.  
+* **QEMU**: The hardware emulation mode of [QEMU](https://www.qemu.org/) can be used as a hardware simulator. More information on a RISC-V QEMU can be found [here](https://www.qemu.org/docs/master/system/target-riscv.html).
+
+#### **ISA Test Suites**
+
+**Architecture Compatibility Tests:** The [RISC-V Architecture Test SIG](https://lists.riscv.org/g/sig-arch-test) (members-only group) curates and maintains an open source test suite for testing RISC-V compatibility. See the [riscv-arch-test](https://github.com/riscv-non-isa/riscv-arch-test) GitHub project.  These tests should be run in addition to your full verification suite to ensure RISC-V compatibility. 
+
+### **6\. Getting Assistance**
+
+At any point in this process, members and non-members can reach out to [RISC-V Staff](https://riscv.org/about/contact) for assistance.
+
+# Open Issues
+
+1. Other open source cores?  
+2. Simulator pointer(s)
