@@ -14,6 +14,11 @@ For those building their own hardware you will either be interested in being Pro
 
 TODO: add two card components, one for each path.
 
+TODO: add secitons on:
+- how to interpret the spec
+- how to test the spec
+- Why RISC-V cant provide Debugging help (go to your silicon vendor)
+
 ## Resources
 
 TODO - add section links to boards pages and open designs sections
