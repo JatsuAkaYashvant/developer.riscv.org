@@ -39,7 +39,7 @@ import PluginDirectoryTooltip from './_components/PluginDirectoryTooltip';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare, faHeart } from '@fortawesome/free-solid-svg-icons';
-import DocusaurusSvg from '@site/src/assets/Docusaurus.svg';
+import DocusaurusSvg from '@site/static/img/logo.svg';
 const TITLE = translate({message: 'Docusaurus Community Plugin Directory'});
 const DESCRIPTION = translate({
   message: 'A community-sourced list of plugins for Docusaurus v2',

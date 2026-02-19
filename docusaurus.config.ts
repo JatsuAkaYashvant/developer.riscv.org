@@ -36,7 +36,6 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  // plugins: ["@cmfcmf/docusaurus-search-local"],
   
   scripts: [
     {
@@ -224,6 +223,7 @@ const config: Config = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} RISC-V International`,
     },
+
     // plugins: [
     //   [
     //     "@cmfcmf/docusaurus-search-local",
@@ -291,6 +291,19 @@ const config: Config = {
       // darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: [
+      // "@cmfcmf/docusaurus-search-local",
+      [
+      '@docusaurus/plugin-ideal-image',
+      /** @type {import('@docusaurus/plugin-ideal-image').Options} */
+      {
+        quality: 100,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+      },
+    ],
+  ],
 };
 
 export default config;

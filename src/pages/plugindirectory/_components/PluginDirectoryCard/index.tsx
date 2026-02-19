@@ -22,7 +22,7 @@ import {
 } from '@site/src/data/plugins';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import DocusaurusSvg from '@site/src/assets/Docusaurus.svg';
+import DocusaurusSvg from '@site/static/img/logo.svg';
 import {sortBy} from '@site/src/utils/jsUtils';
 import Tooltip from '../PluginDirectoryTooltip/index';
 import styles from './styles.module.scss';
