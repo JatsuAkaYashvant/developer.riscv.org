@@ -25,7 +25,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import DocusaurusSvg from '@site/static/img/logo.svg';
 import {sortBy} from '@site/src/utils/jsUtils';
 import Tooltip from '../PluginDirectoryTooltip/index';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
   ({label, color, description}, ref) => (

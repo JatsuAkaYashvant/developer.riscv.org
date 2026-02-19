@@ -8,7 +8,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 import ReactDOM from 'react-dom';
 import {usePopper} from 'react-popper';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 interface Props {
   anchorEl?: HTMLElement | string;

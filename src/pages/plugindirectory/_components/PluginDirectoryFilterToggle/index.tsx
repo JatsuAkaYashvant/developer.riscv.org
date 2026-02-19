@@ -11,7 +11,7 @@ import {useHistory, useLocation} from '@docusaurus/router';
 
 import {prepareUserState} from '../../index';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 export type Operator = 'OR' | 'AND';
 

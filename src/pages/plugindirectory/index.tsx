@@ -36,7 +36,7 @@ import PluginDirectoryFilterToggle, {
 import PluginDirectoryCard from './_components/PluginDirectoryCard';
 import PluginDirectoryTooltip from './_components/PluginDirectoryTooltip';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare, faHeart } from '@fortawesome/free-solid-svg-icons';
 import DocusaurusSvg from '@site/static/img/logo.svg';
