@@ -40,11 +40,11 @@ import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusSquare, faHeart } from '@fortawesome/free-solid-svg-icons';
 import DocusaurusSvg from '@site/static/img/logo.svg';
-const TITLE = translate({message: 'Docusaurus Community Plugin Directory'});
+const TITLE = translate({message: 'RISC-V Device Directory'});
 const DESCRIPTION = translate({
-  message: 'A community-sourced list of plugins for Docusaurus v2',
+  message: 'A community-sourced list of devices in the RISC-V Ecosystem',
 });
-const SUBMIT_URL = 'https://github.com/homotechsual/docusaurus.community/discussions/3';
+const SUBMIT_URL = 'https://github.com/riscv/developer.riscv.org/todo';
 
 type UserState = {
   scrollTopPosition: number;
@@ -155,7 +155,7 @@ function PluginDirectoryHeader() {
         rel="noreferrer">
           <FontAwesomeIcon icon={faPlusSquare} className={styles.buttonIcon}/>
           <Translate id="plugindirectory.header.button">
-            Add a plugin
+            Add a Device
           </Translate>
       </a>
     </section>
@@ -275,7 +275,7 @@ function SearchBar() {
       <input
         id="searchbar"
         placeholder={translate({
-          message: 'Search for plugin or author name...',
+          message: 'Search for Device or Company name',
           id: 'plugindirectory.searchBar.placeholder',
         })}
         value={value ?? undefined}
@@ -329,10 +329,10 @@ function PluginDirectoryCards() {
                 )}>
                 <h2>
                   <Translate id="plugindirectory.favouritesList.title">
-                    Our favourite plugins
+                    Featured Devices
                   </Translate>
                 </h2>
-                <FontAwesomeIcon icon={faHeart} className={styles.svgIconFavourite} size="2xl" />
+                {/*<FontAwesomeIcon icon={faHeart} className={styles.svgIconFavourite} size="2xl" />*/}
                 <SearchBar />
               </div>
               <ul
@@ -349,7 +349,7 @@ function PluginDirectoryCards() {
           </div>
           <div className="container margin-top--lg">
             <h2 className={styles.pluginDirectoryHeader}>
-              <Translate id="plugindirectory.usersList.allUsers">All plugins</Translate>
+              <Translate id="plugindirectory.usersList.allUsers">All devices</Translate>
             </h2>
             <ul className={clsx('clean-list', styles.pluginDirectoryList)}>
               {otherPlugins.map((plugin) => (
