@@ -65,10 +65,12 @@ function DeviceDirectoryCardTag({tags}: {tags: TagType[]}) {
 
 function getCardImage(device: Device): string {
   return (
-    device.preview ??
-    `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
-      device.website,
-    )}/showcase`
+    device.preview ?? 'img/favicon.ico'
+    // Below is the original source. Replace this with our own screenshot generator.
+    // device.preview ??
+    // `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
+    //   device.website,
+    // )}/showcase`
   );
 }
 
