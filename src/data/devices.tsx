@@ -109,7 +109,7 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     source: 'https://riscv.org',
     author: 'riscv',
-    tags: ['content', 'integration'],
+    tags: ['favourite', 'integration'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
   },
