@@ -22,7 +22,7 @@ import {
   MaintainedType,
   MaintenanceStatusList,
   MaintenanceStatuses,
-} from '@site/src/data/plugins';
+} from '@site/src/data/devices';
 import PluginDirectoryTagSelect, {
   readSearchTags,
 } from './_components/PluginDirectoryTagSelect';

@@ -19,7 +19,7 @@ import {
   MaintenanceStatuses,
   type MaintainedType,
   type MaintenanceStatus,
-} from '@site/src/data/plugins';
+} from '@site/src/data/devices';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import DocusaurusSvg from '@site/static/img/logo.svg';
