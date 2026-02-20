@@ -14,7 +14,7 @@ import {
   Tags,
   TagList,
   type TagType,
-  type Plugin,
+  type Device,
   type Tag,
   MaintenanceStatuses,
   type MaintainedType,
@@ -24,7 +24,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import DocusaurusSvg from '@site/static/img/logo.svg';
 import {sortBy} from '@site/src/utils/jsUtils';
-import Tooltip from '../PluginDirectoryTooltip/index';
+import Tooltip from '../DeviceDirectoryTooltip/index';
 import styles from './styles.module.css';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
@@ -36,7 +36,7 @@ const TagComp = React.forwardRef<HTMLLIElement, Tag>(
   ),
 );
 
-function PluginDirectoryCardTag({tags}: {tags: TagType[]}) {
+function DeviceDirectoryCardTag({tags}: {tags: TagType[]}) {
   const tagObjects = tags.map((tag) => ({tag, ...Tags[tag]}));
 
   // Keep same order for all tags
@@ -47,7 +47,7 @@ function PluginDirectoryCardTag({tags}: {tags: TagType[]}) {
   return (
     <>
       {tagObjectsSorted.map((tagObject, index) => {
-        const id = `plugin_card_tag_${tagObject.tag}`;
+        const id = `device_card_tag_${tagObject.tag}`;
 
         return (
           <Tooltip
@@ -63,18 +63,18 @@ function PluginDirectoryCardTag({tags}: {tags: TagType[]}) {
   );
 }
 
-function getCardImage(plugin: Plugin): string {
+function getCardImage(device: Device): string {
   return (
-    plugin.preview ??
+    device.preview ??
     `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
-      plugin.website,
+      device.website,
     )}/showcase`
   );
 }
 
 const MaintenanceStatusComp = React.forwardRef<HTMLLIElement, MaintenanceStatus>(
   ({label, icon, description}, ref) => (
-    <p className={styles.pluginDirectoryCardMaintenanceStatus}>
+    <p className={styles.deviceDirectoryCardMaintenanceStatus}>
       <span className={styles.maintenanceLabel}>Status:</span>
       <span ref={ref} className={styles.maintenanceStatus} title={description}>
         <span className={styles.textLabel}>{label.toLowerCase()}</span>
@@ -84,53 +84,53 @@ const MaintenanceStatusComp = React.forwardRef<HTMLLIElement, MaintenanceStatus>
   ),
 );
 
-function PluginDirectoryCardMaintenanceStatus({maintenanceStatus}: {maintenanceStatus: MaintainedType}): JSX.Element {
+function DeviceDirectoryCardMaintenanceStatus({maintenanceStatus}: {maintenanceStatus: MaintainedType}): JSX.Element {
   const maintenanceStatusObject = MaintenanceStatuses[maintenanceStatus];
   return (
     <MaintenanceStatusComp {...maintenanceStatusObject} />
   );
 };
 
-function PluginDirectoryCard({plugin}: {plugin: Plugin}) {
-  const image = getCardImage(plugin);
+function DeviceDirectoryCard({device}: {device: Device}) {
+  const image = getCardImage(device);
   return (
-    <li key={plugin.name} className="card shadow--md">
-      <div className={clsx('card__image', styles.pluginDirectoryCardImage)}>
-        <Image img={image} alt={plugin.name} />
+    <li key={device.name} className="card shadow--md">
+      <div className={clsx('card__image', styles.deviceDirectoryCardImage)}>
+        <Image img={image} alt={device.name} />
       </div>
       <div className="card__body">
-        <div className={clsx(styles.pluginDirectoryCardHeader)}>
-          <h4 className={styles.pluginDirectoryCardTitle}>
-            <Link href={plugin.website} className={styles.pluginDirectoryCardLink}>
-              {plugin.name}
+        <div className={clsx(styles.deviceDirectoryCardHeader)}>
+          <h4 className={styles.deviceDirectoryCardTitle}>
+            <Link href={device.website} className={styles.deviceDirectoryCardLink}>
+              {device.name}
             </Link>
           </h4>
-          {plugin.tags.includes('favourite') && (
+          {device.tags.includes('favourite') && (
             <FontAwesomeIcon icon={faHeart} className={styles.svgIconFavourite} size="sm" />
           )}
-          {plugin.tags.includes('docusaurus') && (
+          {device.tags.includes('docusaurus') && (
             <DocusaurusSvg className={styles.svgIconDocusaurus} />
           )}
-          {plugin.source && (
+          {device.source && (
             <Link
-              href={plugin.source}
+              href={device.source}
               className={clsx(
                 'button button--secondary button--sm',
-                styles.pluginDirectoryCardSrcBtn,
+                styles.deviceDirectoryCardSrcBtn,
               )}>
-              <Translate id="plugindirectory.card.sourceLink">source</Translate>
+              <Translate id="devicedirectory.card.sourceLink">source</Translate>
             </Link>
           )}
         </div>
-        <p className={styles.pluginDirectoryCardBody}>{plugin.description}</p>
-        <p className={styles.pluginDirectoryCardAuthor}><span className={styles.authorLabel}>Author:</span><span className={styles.authorName}>{plugin.author}</span></p>
-        <PluginDirectoryCardMaintenanceStatus maintenanceStatus={plugin.maintenanceStatus} />
+        <p className={styles.deviceDirectoryCardBody}>{device.description}</p>
+        <p className={styles.deviceDirectoryCardAuthor}><span className={styles.authorLabel}>Author:</span><span className={styles.authorName}>{device.author}</span></p>
+        <DeviceDirectoryCardMaintenanceStatus maintenanceStatus={device.maintenanceStatus} />
       </div>
       <ul className={clsx('card__footer', styles.cardFooter)}>
-        <PluginDirectoryCardTag tags={plugin.tags} />
+        <DeviceDirectoryCardTag tags={device.tags} />
       </ul>
     </li>
   );
 }
 
-export default React.memo(PluginDirectoryCard);
+export default React.memo(DeviceDirectoryCard);

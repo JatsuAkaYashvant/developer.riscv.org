@@ -5,24 +5,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-.pluginDirectoryCardImage {
+.deviceDirectoryCardImage {
   overflow: hidden;
   height: 150px;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
 }
 
-.pluginDirectoryCardHeader {
+.deviceDirectoryCardHeader {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.pluginDirectoryCardTitle {
+.deviceDirectoryCardTitle {
   margin-bottom: 0;
   flex: 1 1 auto;
 }
 
-.pluginDirectoryCardTitle a {
+.deviceDirectoryCardTitle a {
   text-decoration: none;
   background: linear-gradient(
       var(--ifm-color-primary),
@@ -32,46 +32,46 @@
   transition: background-size ease-out 200ms;
 }
 
-.pluginDirectoryCardTitle a:not(:focus):hover {
+.deviceDirectoryCardTitle a:not(:focus):hover {
   background-size: 100% 1px;
 }
 
-.pluginDirectoryCardTitle,
-.pluginDirectoryCardHeader .svgIconFavourite {
+.deviceDirectoryCardTitle,
+.deviceDirectoryCardHeader .svgIconFavourite {
   margin-right: 0.25rem;
 }
 
-.pluginDirectoryCardHeader .svgIconFavourite {
+.deviceDirectoryCardHeader .svgIconFavourite {
   color: var(--site-color-svg-icon-favourite);
 }
 
-.pluginDirectoryCardHeader .svgIconDocusaurus {
+.deviceDirectoryCardHeader .svgIconDocusaurus {
   height: 0.9rem;
   width: 0.9rem;
   margin-right: 0.25rem;
 }
 
-.pluginDirectoryCardSrcBtn {
+.deviceDirectoryCardSrcBtn {
   margin-left: 6px;
   padding-left: 12px;
   padding-right: 12px;
   border: none;
 }
 
-.pluginDirectoryCardSrcBtn:focus-visible {
+.deviceDirectoryCardSrcBtn:focus-visible {
   background-color: var(--ifm-color-secondary-dark);
 }
 
-[data-theme='dark'] .pluginDirectoryCardSrcBtn {
+[data-theme='dark'] .deviceDirectoryCardSrcBtn {
   background-color: var(--ifm-color-emphasis-200) !important;
   color: inherit;
 }
 
-[data-theme='dark'] .pluginDirectoryCardSrcBtn:hover {
+[data-theme='dark'] .deviceDirectoryCardSrcBtn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 
-.pluginDirectoryCardBody {
+.deviceDirectoryCardBody {
   font-size: smaller;
   line-height: 1.66;
 }
@@ -143,10 +143,10 @@
   align-items: center;
 }
 
-.pluginDirectoryCardAuthor {
+.deviceDirectoryCardAuthor {
   margin-bottom: 0;
 }
 
-.pluginDirectoryCardMaintenanceStatus {
+.deviceDirectoryCardMaintenanceStatus {
   margin-bottom: 0;
 }

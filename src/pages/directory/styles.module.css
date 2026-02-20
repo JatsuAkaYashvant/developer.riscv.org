@@ -55,24 +55,24 @@
   width: 15rem;
 }
 
-.pluginDirectoryList {
+.deviceDirectoryList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
 }
 
-.pluginDirectoryFavourite {
+.deviceDirectoryFavourite {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background-color: var(--site-color-favourite-background);
 }
 
-.pluginDirectoryFavouriteHeader {
+.deviceDirectoryFavouriteHeader {
   display: flex;
   align-items: center;
 }
 
-.pluginDirectoryFavouriteHeader > h2 {
+.deviceDirectoryFavouriteHeader > h2 {
   margin-bottom: 0;
 }
 

@@ -18,7 +18,7 @@ import {toggleListItem} from '@site/src/utils/jsUtils';
 
 import {prepareUserState} from '../../index';
 import styles from './styles.module.css';
-import { MaintainedType } from '@site/src/data/plugins';
+import { MaintainedType } from '@site/src/data/devices';
 
 interface Props extends ComponentProps<'input'> {
   icon: ReactElement<ComponentProps<'svg'>>;
@@ -39,7 +39,7 @@ function replaceMaintenanceStatus(search: string, maintenanceStatus: MaintainedT
   return searchParams.toString();
 }
 
-function PluginDirectoryMaintenanceStatusSelect(
+function DeviceDirectoryMaintenanceStatusSelect(
   {id, icon, label, maintenanceStatus, ...rest}: Props,
   ref: React.ForwardedRef<HTMLLabelElement>,
 ) {
@@ -93,4 +93,4 @@ function PluginDirectoryMaintenanceStatusSelect(
   );
 }
 
-export default React.forwardRef(PluginDirectoryMaintenanceStatusSelect);
+export default React.forwardRef(DeviceDirectoryMaintenanceStatusSelect);

@@ -39,7 +39,7 @@ function replaceSearchTags(search: string, newTags: TagType[]) {
   return searchParams.toString();
 }
 
-function PluginDirectoryTagSelect(
+function DeviceDirectoryTagSelect(
   {id, icon, label, tag, ...rest}: Props,
   ref: React.ForwardedRef<HTMLLabelElement>,
 ) {
@@ -93,4 +93,4 @@ function PluginDirectoryTagSelect(
   );
 }
 
-export default React.forwardRef(PluginDirectoryTagSelect);
+export default React.forwardRef(DeviceDirectoryTagSelect);

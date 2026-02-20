@@ -22,8 +22,8 @@ export function readOperator(search: string): Operator {
     'OR') as Operator;
 }
 
-export default function PluginDirectoryFilterToggle(): JSX.Element {
-  const id = 'plugindirectory_filter_toggle';
+export default function DeviceDirectoryFilterToggle(): JSX.Element {
+  const id = 'devicedirectory_filter_toggle';
   const location = useLocation();
   const history = useHistory();
   const [operator, setOperator] = useState(false);

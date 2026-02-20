@@ -14,27 +14,27 @@ import {usePluralForm} from '@docusaurus/theme-common';
 
 import Layout from '@theme/Layout';
 import {
-  sortedPlugins,
+  sortedDevices,
   Tags,
   TagList,
-  type Plugin,
+  type Device,
   type TagType,
   MaintainedType,
   MaintenanceStatusList,
   MaintenanceStatuses,
 } from '@site/src/data/devices';
-import PluginDirectoryTagSelect, {
+import DeviceDirectoryTagSelect, {
   readSearchTags,
-} from './_components/PluginDirectoryTagSelect';
-import PluginDirectoryMaintenanceStatusSelect, {
+} from './_components/DeviceDirectoryTagSelect';
+import DeviceDirectoryMaintenanceStatusSelect, {
   readMaintenanceStatus
-} from './_components/PluginDirectoryMaintenanceStatusSelect';
-import PluginDirectoryFilterToggle, {
+} from './_components/DeviceDirectoryMaintenanceStatusSelect';
+import DeviceDirectoryFilterToggle, {
   type Operator,
   readOperator,
-} from './_components/PluginDirectoryFilterToggle';
-import PluginDirectoryCard from './_components/PluginDirectoryCard';
-import PluginDirectoryTooltip from './_components/PluginDirectoryTooltip';
+} from './_components/DeviceDirectoryFilterToggle';
+import DeviceDirectoryCard from './_components/DeviceDirectoryCard';
+import DeviceDirectoryTooltip from './_components/DeviceDirectoryTooltip';
 
 import styles from './styles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -77,50 +77,50 @@ function readSearchName(search: string) {
   return new URLSearchParams(search).get(SearchNameQueryKey);
 }
 
-function filterPlugins(
-  plugins: Plugin[],
+function filterDevices(
+  devices: Device[],
   selectedTags: TagType[],
   operator: Operator,
   searchName: string | null,
   selectedMaintenanceStatuses: MaintainedType[],
 ) {
-  let filteredPlugins = plugins;
+  let filteredDevices = devices;
   if (searchName) {
     // eslint-disable-next-line no-param-reassign
-    filteredPlugins = filteredPlugins.filter((plugin) =>
-      plugin.name.toLowerCase().includes(searchName.toLowerCase())
-      || plugin.author?.toLowerCase().includes(searchName.toLowerCase()),
+    filteredDevices = filteredDevices.filter((device) =>
+      device.name.toLowerCase().includes(searchName.toLowerCase())
+      || device.author?.toLowerCase().includes(searchName.toLowerCase()),
     );
   }
   if (selectedMaintenanceStatuses.length === 0) {
-    filteredPlugins = filteredPlugins;
+    filteredDevices = filteredDevices;
   }
   if (selectedMaintenanceStatuses.length > 0) {
-    filteredPlugins = filteredPlugins.filter((plugin) => {
+    filteredDevices = filteredDevices.filter((device) => {
       if (operator === 'AND') {
-        return selectedMaintenanceStatuses.every((status) => plugin.maintenanceStatus.includes(status));
+        return selectedMaintenanceStatuses.every((status) => device.maintenanceStatus.includes(status));
       }
-      return selectedMaintenanceStatuses.some((status) => plugin.maintenanceStatus.includes(status));
+      return selectedMaintenanceStatuses.some((status) => device.maintenanceStatus.includes(status));
     });
   }
   if (selectedTags.length === 0) {
-    filteredPlugins = filteredPlugins;
+    filteredDevices = filteredDevices;
   }
   if (selectedTags.length > 0) {
-    filteredPlugins = plugins.filter((plugin) => {
-      if (plugin.tags.length === 0) {
+    filteredDevices = devices.filter((device) => {
+      if (device.tags.length === 0) {
         return false;
       }
       if (operator === 'AND') {
-        return selectedTags.every((tag) => plugin.tags.includes(tag));
+        return selectedTags.every((tag) => device.tags.includes(tag));
       }
-      return selectedTags.some((tag) => plugin.tags.includes(tag));
+      return selectedTags.some((tag) => device.tags.includes(tag));
     });
   }
-  return filteredPlugins;
+  return filteredDevices;
 }
 
-function useFilteredPlugins() {
+function useFilteredDevices() {
   const location = useLocation<UserState>();
   const [operator, setOperator] = useState<Operator>('OR');
   // On SSR / first mount (hydration) no tag is selected
@@ -138,12 +138,12 @@ function useFilteredPlugins() {
   }, [location]);
 
   return useMemo(
-    () => filterPlugins(sortedPlugins, selectedTags, operator, searchName, selectedMaintenanceStatuses),
+    () => filterDevices(sortedDevices, selectedTags, operator, searchName, selectedMaintenanceStatuses),
     [selectedTags, operator, searchName, selectedMaintenanceStatuses],
   );
 }
 
-function PluginDirectoryHeader() {
+function DeviceDirectoryHeader() {
   return (
     <section className="margin-top--lg margin-bottom--lg text--center">
       <h1>{TITLE}</h1>
@@ -154,7 +154,7 @@ function PluginDirectoryHeader() {
         target="_blank"
         rel="noreferrer">
           <FontAwesomeIcon icon={faPlusSquare} className={styles.buttonIcon}/>
-          <Translate id="plugindirectory.header.button">
+          <Translate id="devicedirectory.header.button">
             Add a Device
           </Translate>
       </a>
@@ -162,49 +162,49 @@ function PluginDirectoryHeader() {
   );
 }
 
-function usePluginCountPlural() {
+function useDeviceCountPlural() {
   const {selectMessage} = usePluralForm();
-  return (pluginCount: number) =>
+  return (deviceCount: number) =>
     selectMessage(
-      pluginCount,
+      deviceCount,
       translate(
         {
-          id: 'plugindirectory.filters.resultCount',
+          id: 'devicedirectory.filters.resultCount',
           description:
-            'Pluralized label for the number of plugins found in the directory. Use as many plural forms (separated by "|") as your language supports/needs (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: '1 plugin|{pluginCount} plugins',
+            'Pluralized label for the number of devices found in the directory. Use as many plural forms (separated by "|") as your language supports/needs (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
+          message: '1 device|{deviceCount} devices',
         },
-        {pluginCount},
+        {deviceCount},
       ),
     );
 }
 
-function PluginDirectoryFilters() {
-  const filteredPlugins = useFilteredPlugins();
-  const pluginCountPlural = usePluginCountPlural();
+function DeviceDirectoryFilters() {
+  const filteredDevices = useFilteredDevices();
+  const deviceCountPlural = useDeviceCountPlural();
   return (
     <section className="container margin-top--l margin-bottom--lg">
       <div className={clsx('margin-bottom--sm', styles.filterCheckbox)}>
         <div>
           <h2>
-            <Translate id="plugindirectory.filters.title">Filters</Translate>
+            <Translate id="devicedirectory.filters.title">Filters</Translate>
           </h2>
-          <span>{pluginCountPlural(filteredPlugins.length)}</span>
+          <span>{deviceCountPlural(filteredDevices.length)}</span>
         </div>
-        <PluginDirectoryFilterToggle />
+        <DeviceDirectoryFilterToggle />
       </div>
       <ul className={clsx('clean-list', styles.checkboxList)}>
         {TagList.map((tag, i) => {
           const {label, description, color} = Tags[tag];
-          const id = `plugindirectory_checkbox_id_${tag}`;
+          const id = `devicedirectory_checkbox_id_${tag}`;
 
           return (
             <li key={i} className={styles.checkboxListItem}>
-              <PluginDirectoryTooltip
+              <DeviceDirectoryTooltip
                 id={id}
                 text={description}
                 anchorEl="#__docusaurus">
-                <PluginDirectoryTagSelect
+                <DeviceDirectoryTagSelect
                   tag={tag}
                   id={id}
                   label={label}
@@ -226,7 +226,7 @@ function PluginDirectoryFilters() {
                     )
                   }
                 />
-              </PluginDirectoryTooltip>
+              </DeviceDirectoryTooltip>
             </li>
           );
         })}
@@ -234,20 +234,20 @@ function PluginDirectoryFilters() {
       <ul className={clsx('clean-list', styles.checkboxList)}>
         {MaintenanceStatusList.map((maintenanceStatus, i) => {
           const {label, description, icon} = MaintenanceStatuses[maintenanceStatus];
-          const id = `plugindirectory_checkbox_id_${maintenanceStatus}`;
+          const id = `devicedirectory_checkbox_id_${maintenanceStatus}`;
           return (
             <li key={i} className={styles.checkboxListItem}>
-              <PluginDirectoryTooltip
+              <DeviceDirectoryTooltip
                 id={id}
                 text={description}
                 anchorEl="#__docusaurus">
-                <PluginDirectoryMaintenanceStatusSelect
+                <DeviceDirectoryMaintenanceStatusSelect
                   maintenanceStatus={maintenanceStatus}
                   id={id}
                   label={label}
                   icon={icon}
                 />
-              </PluginDirectoryTooltip>
+              </DeviceDirectoryTooltip>
             </li>
           );
         })}
@@ -256,11 +256,11 @@ function PluginDirectoryFilters() {
   );
 }
 
-const favouritePlugins = sortedPlugins.filter(
-  (plugin) => plugin.tags.includes('favourite'),
+const favouriteDevices = sortedDevices.filter(
+  (device) => device.tags.includes('favourite'),
 );
-const otherPlugins = sortedPlugins.filter(
-  (plugin) => !plugin.tags.includes('favourite'),
+const otherDevices = sortedDevices.filter(
+  (device) => !device.tags.includes('favourite'),
 );
 
 function SearchBar() {
@@ -276,7 +276,7 @@ function SearchBar() {
         id="searchbar"
         placeholder={translate({
           message: 'Search for Device or Company name',
-          id: 'plugindirectory.searchBar.placeholder',
+          id: 'devicedirectory.searchBar.placeholder',
         })}
         value={value ?? undefined}
         onInput={(e) => {
@@ -300,15 +300,15 @@ function SearchBar() {
   );
 }
 
-function PluginDirectoryCards() {
-  const filteredPlugins = useFilteredPlugins();
+function DeviceDirectoryCards() {
+  const filteredDevices = useFilteredDevices();
 
-  if (filteredPlugins.length === 0) {
+  if (filteredDevices.length === 0) {
     return (
       <section className="margin-top--lg margin-bottom--xl">
         <div className="container padding-vert--md text--center">
           <h2>
-            <Translate id="plugindirectory.usersList.noResult">No result</Translate>
+            <Translate id="devicedirectory.usersList.noResult">No result</Translate>
           </h2>
           <SearchBar />
         </div>
@@ -318,17 +318,17 @@ function PluginDirectoryCards() {
 
   return (
     <section className="margin-top--lg margin-bottom--xl">
-      {filteredPlugins.length === sortedPlugins.length ? (
+      {filteredDevices.length === sortedDevices.length ? (
         <>
-          <div className={styles.pluginDirectoryFavourite}>
+          <div className={styles.deviceDirectoryFavourite}>
             <div className="container">
               <div
                 className={clsx(
                   'margin-bottom--md',
-                  styles.pluginDirectoryFavouriteHeader,
+                  styles.deviceDirectoryFavouriteHeader,
                 )}>
                 <h2>
-                  <Translate id="plugindirectory.favouritesList.title">
+                  <Translate id="devicedirectory.favouritesList.title">
                     Featured Devices
                   </Translate>
                 </h2>
@@ -339,21 +339,21 @@ function PluginDirectoryCards() {
                 className={clsx(
                   'container',
                   'clean-list',
-                  styles.pluginDirectoryList,
+                  styles.deviceDirectoryList,
                 )}>
-                {favouritePlugins.map((plugin) => (
-                  <PluginDirectoryCard key={plugin.id} plugin={plugin} />
+                {favouriteDevices.map((device) => (
+                  <DeviceDirectoryCard key={device.id} device={device} />
                 ))}
               </ul>
             </div>
           </div>
           <div className="container margin-top--lg">
-            <h2 className={styles.pluginDirectoryHeader}>
-              <Translate id="plugindirectory.usersList.allUsers">All devices</Translate>
+            <h2 className={styles.deviceDirectoryHeader}>
+              <Translate id="devicedirectory.usersList.allUsers">All devices</Translate>
             </h2>
-            <ul className={clsx('clean-list', styles.pluginDirectoryList)}>
-              {otherPlugins.map((plugin) => (
-                <PluginDirectoryCard key={plugin.id} plugin={plugin} />
+            <ul className={clsx('clean-list', styles.deviceDirectoryList)}>
+              {otherDevices.map((device) => (
+                <DeviceDirectoryCard key={device.id} device={device} />
               ))}
             </ul>
           </div>
@@ -363,13 +363,13 @@ function PluginDirectoryCards() {
           <div
             className={clsx(
               'margin-bottom--md',
-              styles.pluginDirectoryFavouriteHeader,
+              styles.deviceDirectoryFavouriteHeader,
             )}>
             <SearchBar />
           </div>
-          <ul className={clsx('clean-list', styles.pluginDirectoryList)}>
-            {filteredPlugins.map((plugin) => (
-              <PluginDirectoryCard key={plugin.id} plugin={plugin} />
+          <ul className={clsx('clean-list', styles.deviceDirectoryList)}>
+            {filteredDevices.map((device) => (
+              <DeviceDirectoryCard key={device.id} device={device} />
             ))}
           </ul>
         </div>
@@ -378,13 +378,13 @@ function PluginDirectoryCards() {
   );
 }
 
-export default function PluginDirectory(): JSX.Element {
+export default function DeviceDirectory(): JSX.Element {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
       <main className="margin-vert--lg">
-        <PluginDirectoryHeader />
-        <PluginDirectoryFilters />
-        <PluginDirectoryCards />
+        <DeviceDirectoryHeader />
+        <DeviceDirectoryFilters />
+        <DeviceDirectoryCards />
       </main>
     </Layout>
   );
