@@ -114,10 +114,10 @@ const config: Config = {
       logo: {
         alt: 'RISC-V Logo',
         src: 'img/logo.svg',
-        href: 'https://riscv.org',
+        href: '/',
       },
       items: [
-        {to: '/', label: 'Home', position: 'left'},
+        // {to: '/', label: 'Home', position: 'left'},
         {
           label:'Specifications',
           position:'left',
@@ -149,6 +149,11 @@ const config: Config = {
               to:"/docs/software/overview",
             },
           ]
+        },
+        {
+          label:'Device Directory',
+          position:'left',
+          to:"/directory",
         },
         {
           label: 'Blog',

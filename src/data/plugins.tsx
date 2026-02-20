@@ -1044,9 +1044,9 @@ export type Tag = {
 
 export const Tags: {[type in TagType]: Tag} = {
   favourite: {
-    label: translate({message: 'Favourite'}),
+    label: translate({message: 'Featured'}),
     description: translate({
-      message: 'Our favourite Docusaurus plugins you should check out!',
+      message: 'Recent additions to the RISC-V Ecosystem',
       id: 'showcase.tag.favourite.description',
     }),
     color: '#e9669e',
