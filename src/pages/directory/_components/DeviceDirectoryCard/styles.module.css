@@ -74,6 +74,10 @@
 .deviceDirectoryCardBody {
   font-size: smaller;
   line-height: 1.66;
+  /*height: 5em;*/
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .cardFooter {
