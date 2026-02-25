@@ -155,17 +155,16 @@
   margin-bottom: 0;
 }
 
-.container .card-link {
+.card-link {
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-.container .card-link:hover {
-  /*background-color: #f5f5f5;*/
-  background-color: yellow;
+.card-link:hover {
+  background-color: #f5f5f5;
+  /*background-color: yellow;*/
   text-decoration: none;
-  ext-decoration-line: none;
 }
 
 .card {
