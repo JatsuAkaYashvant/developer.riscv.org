@@ -96,6 +96,7 @@ function DeviceDirectoryCardMaintenanceStatus({maintenanceStatus}: {maintenanceS
 function DeviceDirectoryCard({device}: {device: Device}) {
   const image = getCardImage(device);
   return (
+    <a href={device.website} className="card-link">
     <li key={device.name} className="card shadow--md">
       <div className={clsx('card__image', styles.deviceDirectoryCardImage)}>
         <Image img={image} alt={device.name} />
@@ -113,9 +114,9 @@ function DeviceDirectoryCard({device}: {device: Device}) {
           {device.tags.includes('docusaurus') && (
             <DocusaurusSvg className={styles.svgIconDocusaurus} />
           )}
-          {device.source && (
+          {device.page && (
             <Link
-              href={device.source}
+              href={device.page}
               className={clsx(
                 'button button--secondary button--sm',
                 styles.deviceDirectoryCardSrcBtn,
@@ -132,6 +133,7 @@ function DeviceDirectoryCard({device}: {device: Device}) {
         <DeviceDirectoryCardTag tags={device.tags} />
       </ul>
     </li>
+  </a>
   );
 }
 

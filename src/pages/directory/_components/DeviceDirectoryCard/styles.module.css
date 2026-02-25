@@ -154,3 +154,26 @@
 .deviceDirectoryCardMaintenanceStatus {
   margin-bottom: 0;
 }
+
+.container .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.container .card-link:hover {
+  /*background-color: #f5f5f5;*/
+  background-color: yellow;
+  text-decoration: none;
+  ext-decoration-line: none;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.card-link:focus {
+  outline: 2px solid blue;
+}

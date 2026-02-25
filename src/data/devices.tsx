@@ -38,6 +38,14 @@ export type MaintainedType =
   | 'unmaintained'
   | 'unknown';
 
+export type ProfileType = 
+  | 'RVI20'
+  | 'RVA20'
+  | 'RVA22'
+  | 'RVA23'
+  | 'RVB23'
+  | 'unknown';
+
 // Add sites to this list
 // prettier-ignore
 const Devices: Device[] = [
@@ -47,7 +55,7 @@ const Devices: Device[] = [
     description: 'The PolarFire SoC Icicle Kit is a low-cost development platform that enables evaluation of the five-core Linux capable RISC-V microprocessor subsystem, innovative Linux, and real-time execution, low-power capabilities, and the rich set of peripherals of the PolarFire SoC FPGA. PolarFire SoC is ideally suited for secure, reliable and power-efficient compute across a wide range of applications including Imaging, AI/ML, Industrial automation, IoT, Wireline Access Networks, Aerospace, and Defense & Automotive. The Icicle kit features onboard memories (LPDDR4, SPI, and eMMC flash) to run Linux off-the-shelf; a multi-rail power sensor to monitor various power domains; PCIe root port, Raspberry pi, and mikroBUS expansion ports and a host of wired connectivity options for quick prototyping and fast time to market. Features: PolarFire SoC FPGA (MPFS250T-FCVG484EES) , SiFive E51 Monitor core (1 x RV64IMAC) , SiFive U54 Application cores (4 x RV64GC) and Secure boot.  Memory and Storage: 2 GB LPDDR4 x 32, 1 Gb SPI flash, 8 GB eMMC flash & SD card slot (multiplexed).Programming & Debugging:Onboard JTAG connector or onboard embedded FlashPro (multiplexed), UART via micro USB, 52 x test points. Interfaces:4 x 12.7 Gbps SERDES, PCIe Gen2 Rootport, 2 x Gigabit Ethernet, Micro USB 2.0 Hi-Speed OTG , 4 x UART (via single micro USB) , 2 x CAN , 2 x SPI , 2 x I²C.',
     preview: null,
     website: 'https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES',
-    source: 'https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES',
+    page: 'https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES',
     author: 'Microchip',
     tags: ['utility', 'content'],
     minimumVersion: null,
@@ -59,7 +67,7 @@ const Devices: Device[] = [
     description: 'RISC-V is inevitable, and the HiFive Pro P550 development system exemplifies that. In partnership, Intel and SiFive are excited to introduce the highest performance RISC-V development board, which is scheduled to be available Summer 2023. HiFive Pro P550 Features & Specifications:The soul of the machine is the Intel Horse Creek SoC, built on the Intel 4 process, that includes a SiFive Performance™ P550 Core Complex, a quad-core application processor featuring a thirteen-stage, triple-issue, out-of-order pipeline with the RISC-V RV64GBC ISA, and on-board DDR5-5600 and PCIe Gen5. Board features (subject to change) include; 16GB DDR5, 2x PCIe expansion slots, 1/10GbE Networking, USB 3, on-board graphics and a remote management ready interface (OCP DC-SCM). This is a premium software development system ideal for developer desktop machines and rack-based build/test/deploy servers for RISC-V software development. RISC-V has no limits. Intel-SiFive Horse Creek SoC containing quad-core SiFive Performance P550 core complex, 16GB DDR5, Gigabit Ethernet Port, USB 3, Industry standard microATX. Expansion Capabilities, Multiple x16 PCIe® Gen 3 Expansion Slot , M.2 M-Key Slot (PCIe Gen 3) for NVME 2280 SSD Module, M.2 E-Key Slot (PCIe Gen 3) for Wi-Fi/Bluetooth Module. If you’re a serious software developer, kernel developer, or Linux hacker, there are a few great reasons to use this board, including performance for the serious software designer; port software to the RISC‑V platform; evaluate the SiFive Performance P550‑MC processor; want multi-core, Linux-capable RISC‑V hardware; need to create the next great thing!',
     preview: null,
     website: 'https://www.sifive.com/boards/hifive-pro-p550',
-    source: 'https://www.sifive.com/boards/hifive-pro-p550',
+    page: 'https://www.sifive.com/boards/hifive-pro-p550',
     author: 'SiFive',
     tags: ['api', 'utility'],
     minimumVersion: null,
@@ -71,7 +79,7 @@ const Devices: Device[] = [
     description: 'The CORE-V MCU DevKit is a turnkey, open-source development and prototyping platform for the CORE-V MCU System on Chip. The CORE-V MCU DevKit enables makers of IoT and embedded systems to evaluate the performance of the CORE-V MCU, to interconnect with WiFi and the IoT cloud, and to develop and test software using the CORE-V SDK. Features: CORE-V MCU, CV32E40P processor core, Quicklogic ArticPro 2 eFPGA, 4 MB flash memory, Ashling Opella-LD onboard JTAG debug module, USB-C for terminal and onboard debug access, JTAG connector for external debug access, Espressif AWS IoT ExpressLink Module for AWS IoT cloud interconnect, mikroBUS onboard socket, allowing access to a vast range of mikroBUS modules, Himax HM01B0 Ultralow Power CMOS Image Sensor, I2C temperature sensor, Several LEDs, Reset button and general purpose button, Dimensions 75 mm x 100 mm, Power supply via USB-C or barrel connector (5V - 18V in). The CORE-V MCU DevKit is supported by OpenHW Group’s open-source CORE-V MCU SDK. The SDK comprises: Eclipse based IDE, Debug support, FreeRTOS, CORE-V GNU GCC tool chain, Peripheral driver libraries, Example Code.',
     preview: null,
     website: 'https://www.openhwgroup.org/core-v-devkits/',
-    source: 'https://www.openhwgroup.org/core-v-devkits/',
+    page: 'https://www.openhwgroup.org/core-v-devkits/',
     author: 'OpenHW',
     tags: ['utility'],
     minimumVersion: null,
@@ -83,7 +91,7 @@ const Devices: Device[] = [
     description: 'Test 1 description 12345',
     preview: null,
     website: 'https://riscv.org',
-    source: 'https://riscv.org',
+    page: 'https://riscv.org',
     author: 'riscv',
     tags: ['theme', 'utility'],
     minimumVersion: null,
@@ -95,7 +103,7 @@ const Devices: Device[] = [
     description: 'This is yet another test device',
     preview: null,
     website: 'https://riscv.org',
-    source: 'https://riscv.org',
+    page: 'https://riscv.org',
     author: 'docusaurus',
     tags: ['content', 'docusaurus'],
     minimumVersion: null,
@@ -107,7 +115,7 @@ const Devices: Device[] = [
     description: 'ipsum lorum mcawesome sauce',
     preview: null,
     website: 'https://riscv.org',
-    source: 'https://riscv.org',
+    page: 'https://riscv.org',
     author: 'riscv',
     tags: ['favourite', 'integration'],
     minimumVersion: null,
@@ -125,7 +133,7 @@ export type Device = {
   description: string;
   preview: string | null; // null = use our serverless screenshot service
   website: string;
-  source: string | null;
+  page: string | null;
   minimumVersion: string | null; // null = no minimum version
   author: string | null;
   tags: TagType[];
@@ -295,6 +303,8 @@ export const MaintenanceStatuses: {[type in MaintainedType]: MaintenanceStatus} 
 };
 
 export const MaintenanceStatusList = Object.keys(MaintenanceStatuses) as MaintainedType[];
+
+
 
 function sortDevices() {
   let result = Devices;
