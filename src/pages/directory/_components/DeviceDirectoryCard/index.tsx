@@ -64,8 +64,15 @@ function DeviceDirectoryCardTag({tags}: {tags: TagType[]}) {
 }
 
 function getCardImage(device: Device): string {
+  var image = ""
+  if(device.image == null){
+      image = require('@site/static/img/favicon.ico').default;
+    }
+    else{
+     image = require('@site/src/pages/directory/'+device.image).default;
+    }
   return (
-    device.preview ?? 'img/favicon.ico'
+    image
     // Below is the original source. Replace this with our own screenshot generator.
     // device.preview ??
     // `https://slorber-api-screenshot.netlify.app/${encodeURIComponent(
@@ -99,7 +106,8 @@ function DeviceDirectoryCard({device}: {device: Device}) {
     <a href={device.website} className="card-link">
     <li key={device.name} className="card shadow--md">
       <div className={clsx('card__image', styles.deviceDirectoryCardImage)}>
-        <Image img={image} alt={device.name} />
+        {/*<Image img={image} alt={device.name} />*/}
+        <img src={image} />
       </div>
       <div className="card__body">
         <div className={clsx(styles.deviceDirectoryCardHeader)}>
