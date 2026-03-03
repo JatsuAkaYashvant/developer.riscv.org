@@ -105,7 +105,11 @@ function DeviceDirectoryCard({device}: {device: Device}) {
   return (
     <Link 
       to={device.website} 
-      className="card-link"
+      // className="card-link"
+      className={clsx(
+                'deviceDirectoryCardLink',
+                styles.deviceDirectoryCardLink,
+              )}
       target="_self"
     >
     <li key={device.name} className="card shadow--md">
@@ -116,9 +120,7 @@ function DeviceDirectoryCard({device}: {device: Device}) {
       <div className="card__body">
         <div className={clsx(styles.deviceDirectoryCardHeader)}>
           <h4 className={styles.deviceDirectoryCardTitle}>
-            <Link href={device.website} className={styles.deviceDirectoryCardLink}>
-              {device.name}
-            </Link>
+            {device.name}
           </h4>
           {device.tags.includes('favourite') && (
             <FontAwesomeIcon icon={faHeart} className={styles.svgIconFavourite} size="sm" />
@@ -133,13 +135,14 @@ function DeviceDirectoryCard({device}: {device: Device}) {
                 'button button--secondary button--sm',
                 styles.deviceDirectoryCardSrcBtn,
               )}>
-              <Translate id="devicedirectory.card.sourceLink">source</Translate>
+              <Translate id="devicedirectory.card.sourceLink">website</Translate>
             </Link>
           )}
         </div>
         <p className={styles.deviceDirectoryCardBody}>{device.description}</p>
-        <p className={styles.deviceDirectoryCardAuthor}><span className={styles.authorLabel}>Author:</span><span className={styles.authorName}>{device.author}</span></p>
-        <DeviceDirectoryCardMaintenanceStatus maintenanceStatus={device.maintenanceStatus} />
+        {/*<p className={styles.deviceDirectoryCardAuthor}><span className={styles.authorLabel}>Author:</span><span className={styles.authorName}>{device.author}</span></p>*/}
+        {/*Removed the maintinance status information*/}
+        {/*<DeviceDirectoryCardMaintenanceStatus maintenanceStatus={device.maintenanceStatus} />*/}
       </div>
       <ul className={clsx('card__footer', styles.cardFooter)}>
         <DeviceDirectoryCardTag tags={device.tags} />
