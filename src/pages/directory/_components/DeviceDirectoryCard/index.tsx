@@ -103,7 +103,11 @@ function DeviceDirectoryCardMaintenanceStatus({maintenanceStatus}: {maintenanceS
 function DeviceDirectoryCard({device}: {device: Device}) {
   const image = getCardImage(device);
   return (
-    <a href={device.website} className="card-link">
+    <Link 
+      to={device.website} 
+      className="card-link"
+      target="_self"
+    >
     <li key={device.name} className="card shadow--md">
       <div className={clsx('card__image', styles.deviceDirectoryCardImage)}>
         {/*<Image img={image} alt={device.name} />*/}
@@ -141,7 +145,7 @@ function DeviceDirectoryCard({device}: {device: Device}) {
         <DeviceDirectoryCardTag tags={device.tags} />
       </ul>
     </li>
-  </a>
+  </Link>
   );
 }
 
