@@ -251,7 +251,8 @@ function DeviceDirectoryFilters() {
           );
         })}
       </ul>
-      <ul className={clsx('clean-list', styles.checkboxList)}>
+      {/*Maintained / Unmaintained tags - uncomment to add back*/}
+      {/*<ul className={clsx('clean-list', styles.checkboxList)}>
         {MaintenanceStatusList.map((maintenanceStatus, i) => {
           const {label, description, icon} = MaintenanceStatuses[maintenanceStatus];
           const id = `devicedirectory_checkbox_id_${maintenanceStatus}`;
@@ -271,7 +272,8 @@ function DeviceDirectoryFilters() {
             </li>
           );
         })}
-      </ul>
+      </ul>*/}
+      {/*Profile Tags*/}
       <ul className={clsx('clean-list', styles.checkboxList)}>
         {ProfileList.map((profile, i) => {
           const {label, description, icon} = Profiles[profile];
