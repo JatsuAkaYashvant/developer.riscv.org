@@ -140,6 +140,9 @@ function DeviceDirectoryCard({device}: {device: Device}) {
           )}
         </div>
         <p className={styles.deviceDirectoryCardBody}>{device.description}</p>
+        <p className={styles.deviceDirectoryCardProfile}>
+          <span className={styles.profileLabel}>Profile:</span><span className={styles.profile}>{device.profile}</span>
+        </p>
         {/*<p className={styles.deviceDirectoryCardAuthor}><span className={styles.authorLabel}>Author:</span><span className={styles.authorName}>{device.author}</span></p>*/}
         {/*Removed the maintinance status information*/}
         {/*<DeviceDirectoryCardMaintenanceStatus maintenanceStatus={device.maintenanceStatus} />*/}

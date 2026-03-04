@@ -22,6 +22,9 @@ import {
   MaintainedType,
   MaintenanceStatusList,
   MaintenanceStatuses,
+  ProfileType,
+  ProfileList,
+  Profiles,
 } from '@site/src/data/devices';
 import DeviceDirectoryTagSelect, {
   readSearchTags,

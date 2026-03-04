@@ -54,6 +54,7 @@ const Devices: Device[] = [
     tags: ['asic','fpga'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
+    profile: ['RVI20'],
   },
   {
     id: 'sifive.hifivep550',
@@ -67,6 +68,7 @@ const Devices: Device[] = [
     tags: ['certified'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
+    profile: ['RVA20'],
   },
   {
     id: 'OpenHW.corevdevkit',
@@ -80,6 +82,7 @@ const Devices: Device[] = [
     tags: ['asic'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
+    profile: ['RVA22'],
   },
   {
     id: 'test.test1',
@@ -93,6 +96,7 @@ const Devices: Device[] = [
     tags: ['certified', 'profile'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
+    profile: ['RVA23'],
   },
   {
     id: 'test.test2',
@@ -103,9 +107,10 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     page: 'https://riscv.org',
     author: 'docusaurus',
-    tags: ['certified'],
+    tags: ['certified','favourite'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
+    profile: null,
   },
   {
     id: 'test.test3',
@@ -119,6 +124,7 @@ const Devices: Device[] = [
     tags: ['fpga','profile'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
+    profile: null,
   },
   /*
   Pro Tip: add your device in alphabetical order.
@@ -246,7 +252,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     description: translate({
       message:
         'Insert description of profile here',
-      id: 'showcase.maintenancestatus.rvi20.description',
+      id: 'showcase.profile.rvi20.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleCheck} color="#28a745" style={{marginLeft: 8}}/>,
   },
@@ -255,7 +261,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     description: translate({
       message:
         'Insert description of profile here',
-      id: 'showcase.maintenancestatus.rva20.description',
+      id: 'showcase.profile.rva20.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
@@ -264,7 +270,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     description: translate({
       message:
         'Insert description of profile here',
-      id: 'showcase.maintenancestatus.RVA22.description',
+      id: 'showcase.profile.RVA22.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
@@ -273,7 +279,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     description: translate({
       message:
         'Insert description of profile here',
-      id: 'showcase.maintenancestatus.rva23.description',
+      id: 'showcase.profile.rva23.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
@@ -282,7 +288,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     description: translate({
       message:
         'Insert description of profile here',
-      id: 'showcase.maintenancestatus.rvb23.description',
+      id: 'showcase.profile.rvb23.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
@@ -291,7 +297,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     description: translate({
       message:
         'We could not determine the maintenance status of this device.',
-      id: 'showcase.maintenancestatus.unknown.description',
+      id: 'showcase.profile.unknown.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleMinus} color="#ffc107" style={{marginLeft: 8}}/>,
   },
