@@ -21,17 +21,10 @@ export type TagType =
   // DO NOT USE THIS TAG: we choose sites to add to favourites
   | 'favourite'
   // DO NOT USE THIS TAG: we will add official devices/themes to the showcase.
-  | 'docusaurus'
-  | 'search'
+  | 'asic'
+  | 'fpga'
   | 'certified'
-  | 'utility'
-  | 'content'
-  | 'theme'
-  | 'markdown'
-  | 'analytics'
-  | 'integration'
-  | 'seo'
-  | 'editing';
+  | 'profile';
 
 export type MaintainedType = 
   | 'maintained'
@@ -58,7 +51,7 @@ const Devices: Device[] = [
     website: 'pathname:///directory/microchip/polarfile-soc-icicle',
     page: 'https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES',
     author: 'Microchip',
-    tags: ['utility', 'content'],
+    tags: ['asic','fpga'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
   },
@@ -71,7 +64,7 @@ const Devices: Device[] = [
     website: 'pathname:///directory/sifive/hifivep550',
     page: 'https://www.sifive.com/boards/hifive-pro-p550',
     author: 'SiFive',
-    tags: ['certified', 'utility'],
+    tags: ['certified'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
   },
@@ -84,7 +77,7 @@ const Devices: Device[] = [
     website: 'pathname:///directory/openhw/corev-mcu-devkit',
     page: 'https://www.openhwgroup.org/core-v-devkits/',
     author: 'OpenHW',
-    tags: ['utility'],
+    tags: ['asic'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
   },
@@ -97,7 +90,7 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     page: 'https://riscv.org',
     author: 'riscv',
-    tags: ['theme', 'utility'],
+    tags: ['certified', 'profile'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
   },
@@ -110,7 +103,7 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     page: 'https://riscv.org',
     author: 'docusaurus',
-    tags: ['content', 'docusaurus'],
+    tags: ['certified'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
   },
@@ -123,7 +116,7 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     page: 'https://riscv.org',
     author: 'riscv',
-    tags: ['favourite', 'integration'],
+    tags: ['fpga','profile'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
   },
@@ -163,20 +156,20 @@ export const Tags: {[type in TagType]: Tag} = {
     color: '#e9669e',
   },
 
-  docusaurus: {
-    label: translate({message: 'Docusaurus'}),
+  asic: {
+    label: translate({message: 'ASIC'}),
     description: translate({
-      message: 'Docusaurus core / official devices.',
-      id: 'showcase.tag.docusaurus.description',
+      message: 'Device uses a custom core. Non-profile compliant.',
+      id: 'showcase.tag.asic.profile',
     }),
     color: '#3ecc5f',
   },
 
-  search: {
-    label: translate({message: 'Search'}),
+  fpga: {
+    label: translate({message: 'FPGA'}),
     description: translate({
-      message: 'Docusaurus devices implementing new search functionalities for your site.',
-      id: 'showcase.tag.search.description',
+      message: 'The device is an FPGA',
+      id: 'showcase.tag.fpga.description',
     }),
     color: '#ca3c25',
   },
@@ -190,84 +183,14 @@ export const Tags: {[type in TagType]: Tag} = {
     color: '#e6af2e',
   },
 
-  utility: {
-    label: translate({message: 'Utility'}),
+  profile: {
+    label: translate({message: 'Profile Compliant'}),
     description: translate({
       message:
-        'Docusaurus devices providing utility features, such as analytics, SASS support, image enhancements, etc.',
-      id: 'showcase.tag.utility.description',
+        'This device complies with one of the RISC-V Profiles.',
+      id: 'showcase.tag.profile.description',
     }),
     color: '#baff29',
-  },
-
-  content: {
-    label: translate({message: 'Content'}),
-    description: translate({
-      message:
-        'Docusaurus devices providing content enhancements, such as diagram embedding, code block enhancements, etc.',
-      id: 'showcase.tag.content.description',
-    }),
-    color: '#820b8a',
-  },
-
-  theme: {
-    label: translate({message: 'Theme'}),
-    description: translate({
-      message:
-        'Docusaurus devices implementing new themes or significant theme enhancements.',
-      id: 'showcase.tag.theme.description',
-    }),
-    color: '#7eb2dd',
-  },
-
-  markdown: {
-    label: translate({message: 'Markdown'}),
-    description: translate({
-      message:
-        'Docusaurus devices implementing new markdown features, such as admonitions, etc.',
-      id: 'showcase.tag.markdown.description',
-    }),
-    color: '#49d49d',
-  },
-
-  integration: {
-    label: translate({message: 'Integration'}),
-    description: translate({
-      message:
-        'Docusaurus devices integrating with external services, such as Algolia, Netlify, etc.',
-      id: 'showcase.tag.integration.description',
-    }),
-    color: '#ff7700',
-  },
-
-  analytics: {
-    label: translate({message: 'Analytics'}),
-    description: translate({
-      message:
-        'Docusaurus devices implementing new analytics features, such as Plausible, Matomo, etc.',
-      id: 'showcase.tag.analytics.description',
-    }),
-    color: '#b892ff',
-  },
-
-  seo: {
-    label: translate({message: 'SEO'}),
-    description: translate({
-      message:
-        'Docusaurus devices implementing new SEO features, such as sitemap, robots.txt, etc.',
-      id: 'showcase.tag.seo.description',
-    }),
-    color: '#e128d4',
-  },
-
-  editing: {
-    label: translate({message: 'Editing'}),
-    description: translate({
-      message:
-        'Docusaurus devices implementing new editing features, such as edit this page, etc.',
-      id: 'showcase.tag.editing.description',
-    }),
-    color: '#ffaaff',
   }
 };
 
