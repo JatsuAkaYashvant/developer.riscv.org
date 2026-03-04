@@ -54,7 +54,7 @@ const Devices: Device[] = [
     tags: ['asic','fpga'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
-    profile: ['RVI20'],
+    profile: 'rvi20',
   },
   {
     id: 'sifive.hifivep550',
@@ -68,7 +68,7 @@ const Devices: Device[] = [
     tags: ['certified'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
-    profile: ['RVA20'],
+    profile: 'rva20',
   },
   {
     id: 'OpenHW.corevdevkit',
@@ -82,7 +82,7 @@ const Devices: Device[] = [
     tags: ['asic'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
-    profile: ['RVA22'],
+    profile: 'rva22',
   },
   {
     id: 'test.test1',
@@ -96,7 +96,7 @@ const Devices: Device[] = [
     tags: ['certified', 'profile_compliant'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
-    profile: ['RVA23'],
+    profile: 'rva23',
   },
   {
     id: 'test.test2',
