@@ -23,7 +23,7 @@ export type TagType =
   // DO NOT USE THIS TAG: we will add official devices/themes to the showcase.
   | 'docusaurus'
   | 'search'
-  | 'api'
+  | 'certified'
   | 'utility'
   | 'content'
   | 'theme'
@@ -71,7 +71,7 @@ const Devices: Device[] = [
     website: 'pathname:///directory/sifive/hifivep550',
     page: 'https://www.sifive.com/boards/hifive-pro-p550',
     author: 'SiFive',
-    tags: ['api', 'utility'],
+    tags: ['certified', 'utility'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
   },
@@ -181,11 +181,11 @@ export const Tags: {[type in TagType]: Tag} = {
     color: '#ca3c25',
   },
 
-  api: {
-    label: translate({message: 'API'}),
+  certified: {
+    label: translate({message: 'RISC-V Certified'}),
     description: translate({
-      message: 'Docusaurus devices for API documentation, testing and more...',
-      id: 'showcase.tag.api.description',
+      message: 'This device has passed the RISC-V Certification Process.',
+      id: 'showcase.tag.certified.description',
     }),
     color: '#e6af2e',
   },
@@ -311,7 +311,70 @@ export const MaintenanceStatuses: {[type in MaintainedType]: MaintenanceStatus} 
 
 export const MaintenanceStatusList = Object.keys(MaintenanceStatuses) as MaintainedType[];
 
+export type Profile = {
+  label: string;
+  description: string;
+  icon: JSX.Element;
+};
 
+export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
+  RVI20: {
+    label: translate({message: 'RVI20'}),
+    description: translate({
+      message:
+        'Insert description of profile here',
+      id: 'showcase.maintenancestatus.rvi20.description',
+    }),
+    icon: <FontAwesomeIcon icon={faCircleCheck} color="#28a745" style={{marginLeft: 8}}/>,
+  },
+  RVA20: {
+    label: translate({message: 'RVA20'}),
+    description: translate({
+      message:
+        'Insert description of profile here',
+      id: 'showcase.maintenancestatus.rva20.description',
+    }),
+    icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
+  },
+  RVA22: {
+    label: translate({message: 'RVA22'}),
+    description: translate({
+      message:
+        'Insert description of profile here',
+      id: 'showcase.maintenancestatus.RVA22.description',
+    }),
+    icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
+  },
+  RVA23: {
+    label: translate({message: 'RVA23'}),
+    description: translate({
+      message:
+        'Insert description of profile here',
+      id: 'showcase.maintenancestatus.rva23.description',
+    }),
+    icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
+  },
+  RVB23: {
+    label: translate({message: 'RVB23'}),
+    description: translate({
+      message:
+        'Insert description of profile here',
+      id: 'showcase.maintenancestatus.rvb23.description',
+    }),
+    icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
+  },
+  unknown: {
+    label: translate({message: 'Unknown'}),
+    description: translate({
+      message:
+        'We could not determine the maintenance status of this device.',
+      id: 'showcase.maintenancestatus.unknown.description',
+    }),
+    icon: <FontAwesomeIcon icon={faCircleMinus} color="#ffc107" style={{marginLeft: 8}}/>,
+  },
+};
+
+export const ProfileList = Object.keys(ProfileLists) as ProfileType[];
 
 function sortDevices() {
   let result = Devices;
