@@ -32,6 +32,9 @@ import DeviceDirectoryTagSelect, {
 import DeviceDirectoryMaintenanceStatusSelect, {
   readMaintenanceStatus
 } from './_components/DeviceDirectoryMaintenanceStatusSelect';
+import DeviceDirectoryProfileSelect, {
+  readProfile
+} from './_components/DeviceDirectoryProfileSelect';
 import DeviceDirectoryFilterToggle, {
   type Operator,
   readOperator,
@@ -86,6 +89,7 @@ function filterDevices(
   operator: Operator,
   searchName: string | null,
   selectedMaintenanceStatuses: MaintainedType[],
+  selectedProfiles: ProfileType[],
 ) {
   let filteredDevices = devices;
   if (searchName) {
@@ -104,6 +108,17 @@ function filterDevices(
         return selectedMaintenanceStatuses.every((status) => device.maintenanceStatus.includes(status));
       }
       return selectedMaintenanceStatuses.some((status) => device.maintenanceStatus.includes(status));
+    });
+  }
+  if (selectedProfiles.length === 0) {
+    filteredDevices = filteredDevices;
+  }
+  if (selectedProfiles.length > 0) {
+    filteredDevices = filteredDevices.filter((device) => {
+      if (operator === 'AND') {
+        return selectedProfiles.every((status) => device.profile.includes(status));
+      }
+      return selectedProfiles.some((status) => device.profile.includes(status));
     });
   }
   if (selectedTags.length === 0) {
@@ -130,6 +145,7 @@ function useFilteredDevices() {
   const [selectedTags, setSelectedTags] = useState<TagType[]>([]);
   const [searchName, setSearchName] = useState<string | null>(null);
   const [selectedMaintenanceStatuses, setSelectedMaintenanceStatuses] = useState<MaintainedType[]>([]);
+  const [selectedProfiles, setSelectedProfiles] = useState<ProfileType[]>([]);
   // Sync tags from QS to state (delayed on purpose to avoid SSR/Client
   // hydration mismatch)
   useEffect(() => {
@@ -137,12 +153,13 @@ function useFilteredDevices() {
     setOperator(readOperator(location.search));
     setSearchName(readSearchName(location.search));
     setSelectedMaintenanceStatuses(readMaintenanceStatus(location.search));
+    setSelectedProfiles(readProfile(location.search));
     restoreUserState(location.state);
   }, [location]);
 
   return useMemo(
-    () => filterDevices(sortedDevices, selectedTags, operator, searchName, selectedMaintenanceStatuses),
-    [selectedTags, operator, searchName, selectedMaintenanceStatuses],
+    () => filterDevices(sortedDevices, selectedTags, operator, searchName, selectedMaintenanceStatuses,selectedProfiles),
+    [selectedTags, operator, searchName, selectedMaintenanceStatuses, selectedProfiles],
   );
 }
 
@@ -246,6 +263,27 @@ function DeviceDirectoryFilters() {
                 anchorEl="#__docusaurus">
                 <DeviceDirectoryMaintenanceStatusSelect
                   maintenanceStatus={maintenanceStatus}
+                  id={id}
+                  label={label}
+                  icon={icon}
+                />
+              </DeviceDirectoryTooltip>
+            </li>
+          );
+        })}
+      </ul>
+      <ul className={clsx('clean-list', styles.checkboxList)}>
+        {ProfileList.map((profile, i) => {
+          const {label, description, icon} = Profiles[profile];
+          const id = `devicedirectory_checkbox_id_${profile}`;
+          return (
+            <li key={i} className={styles.checkboxListItem}>
+              <DeviceDirectoryTooltip
+                id={id}
+                text={description}
+                anchorEl="#__docusaurus">
+                <DeviceDirectoryProfileSelect
+                  profile={profile}
                   id={id}
                   label={label}
                   icon={icon}

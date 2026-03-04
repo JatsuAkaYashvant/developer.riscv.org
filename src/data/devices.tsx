@@ -24,7 +24,7 @@ export type TagType =
   | 'asic'
   | 'fpga'
   | 'certified'
-  | 'profile';
+  | 'profile_compliant';
 
 export type MaintainedType = 
   | 'maintained'
@@ -32,11 +32,11 @@ export type MaintainedType =
   | 'unknown';
 
 export type ProfileType = 
-  | 'RVI20'
-  | 'RVA20'
-  | 'RVA22'
-  | 'RVA23'
-  | 'RVB23'
+  | 'rvi20'
+  | 'rva20'
+  | 'rva22'
+  | 'rva23'
+  | 'rvb23'
   | 'unknown';
 
 // Add sites to this list
@@ -93,7 +93,7 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     page: 'https://riscv.org',
     author: 'riscv',
-    tags: ['certified', 'profile'],
+    tags: ['certified', 'profile_compliant'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
     profile: ['RVA23'],
@@ -110,7 +110,7 @@ const Devices: Device[] = [
     tags: ['certified','favourite'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
-    profile: null,
+    profile: 'unknown',
   },
   {
     id: 'test.test3',
@@ -121,10 +121,10 @@ const Devices: Device[] = [
     website: 'https://riscv.org',
     page: 'https://riscv.org',
     author: 'riscv',
-    tags: ['fpga','profile'],
+    tags: ['fpga','profile_compliant'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
-    profile: null,
+    profile: 'unknown',
   },
   /*
   Pro Tip: add your device in alphabetical order.
@@ -189,12 +189,12 @@ export const Tags: {[type in TagType]: Tag} = {
     color: '#e6af2e',
   },
 
-  profile: {
+  profile_compliant: {
     label: translate({message: 'Profile Compliant'}),
     description: translate({
       message:
         'This device complies with one of the RISC-V Profiles.',
-      id: 'showcase.tag.profile.description',
+      id: 'showcase.tag.profile_compliant.description',
     }),
     color: '#baff29',
   }
@@ -246,8 +246,8 @@ export type Profile = {
   icon: JSX.Element;
 };
 
-export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
-  RVI20: {
+export const Profiles: {[type in ProfileType]: ProfileStatus} = {
+  rvi20: {
     label: translate({message: 'RVI20'}),
     description: translate({
       message:
@@ -256,7 +256,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     }),
     icon: <FontAwesomeIcon icon={faCircleCheck} color="#28a745" style={{marginLeft: 8}}/>,
   },
-  RVA20: {
+  rva20: {
     label: translate({message: 'RVA20'}),
     description: translate({
       message:
@@ -265,7 +265,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
-  RVA22: {
+  rva22: {
     label: translate({message: 'RVA22'}),
     description: translate({
       message:
@@ -274,7 +274,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
-  RVA23: {
+  rva23: {
     label: translate({message: 'RVA23'}),
     description: translate({
       message:
@@ -283,7 +283,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
   },
-  RVB23: {
+  rvb23: {
     label: translate({message: 'RVB23'}),
     description: translate({
       message:
@@ -303,7 +303,7 @@ export const ProfileLists: {[type in ProfileType]: ProfileStatus} = {
   },
 };
 
-export const ProfileList = Object.keys(ProfileLists) as ProfileType[];
+export const ProfileList = Object.keys(Profiles) as ProfileType[];
 
 function sortDevices() {
   let result = Devices;
