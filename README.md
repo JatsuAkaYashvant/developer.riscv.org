@@ -55,4 +55,5 @@ This will fix 99% of problems.
 The blog content are markdown files under the `blog/` folder. You can create a new blog post by simply adding markdown files here. Take note of the header in the markdown files to specify author, date, post types,...etc. 
 
 ## Boards / Reference Design section
-To submit a new board / reference design please open a PR and follow the template. TODO: work in progress, come back to complete instructions once build out is finished.
+To submit a new board / reference design please open a PR and follow the template. 
+For detailed instructions see the [add a new board to device directory](https://github.com/riscv/developer.riscv.org/wiki/Boards-Directory#add-a-device) guide.
