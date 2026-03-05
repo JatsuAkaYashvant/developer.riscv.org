@@ -50,7 +50,7 @@ const TITLE = translate({message: 'RISC-V Device Directory'});
 const DESCRIPTION = translate({
   message: 'A community-sourced list of devices in the RISC-V Ecosystem',
 });
-const SUBMIT_URL = 'https://github.com/riscv/developer.riscv.org/todo';
+const SUBMIT_URL = 'https://github.com/riscv/developer.riscv.org/wiki/Boards-Directory';
 
 type UserState = {
   scrollTopPosition: number;

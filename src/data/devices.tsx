@@ -39,7 +39,7 @@ export type ProfileType =
   | 'rvb23'
   | 'unknown';
 
-// Add sites to this list
+// Add devices to this list
 // prettier-ignore
 const Devices: Device[] = [
   {
