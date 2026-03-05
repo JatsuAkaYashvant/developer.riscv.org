@@ -6,14 +6,14 @@ import Link from '@docusaurus/Link';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  image: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Specification Developers',
-    Svg: require('@site/static/img/specdev.png').default,
+    image: 'specdev.png',
     button:'Start Reading',
     link: '/docs/spec/reference',
     description: (
@@ -24,7 +24,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Hardware Developers',
-    Svg: require('@site/static/img/hardwaredev.png').default,
+    image: 'hardwaredev.png',
     button:'Start Building',
     link: '/docs/hardware/overview',
     description: (
@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Software Developers',
-    Svg: require('@site/static/img/softwaredev.png').default,
+    image: 'softwaredev.png',
     button:'Start compiling',
     link: '/docs/software/overview',
     description: (
@@ -46,12 +46,13 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, Svg,button,link, description}: FeatureItem) {
+function Feature({title, image,button,link, description}: FeatureItem) {
+  var img = require('@site/static/img/'+image).default
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
         {/*<Svg className={styles.featureSvg} role="img" />*/}
-        <img src={Svg} role="img" width="200" height="200"/>
+        <img src={img} role="img" width="200" height="200"/>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
