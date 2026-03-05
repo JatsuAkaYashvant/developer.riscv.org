@@ -30,7 +30,7 @@ npx antora --fetch antora-playbook.yml
 
 Note: there are specific overrides for the Antora build process in `antora/supplimental-ui/partials`, if you are seeing weird behavior address these files first. 
 
-### Local Development
+## Local Development
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 ```shell
@@ -40,7 +40,7 @@ yarn start
 To stop the server press `ctrl+c`
 
 
-#### Local Search
+### Local Search
 To run the site with search run the following 2 commands:
 
 ```shell
@@ -50,12 +50,23 @@ npm run docusaurus serve
 
 NOTE: if you do not do this and instead just use `npm start` then the search bar will not build. 
 
-#### Debug
+### Debug
 If something has gone wrong, try running `yarn clear; yarn build; yarn start`
 
 If you still have a problem, delete the `node_modules folder`, then run `yarn clear; yarn install; yarn build; yarn start`. 
 
 This will fix 99% of problems. 
+
+### Deployment
+
+To deploy your local version you can either
+1) Use the github action, which on merging changes into the `main` branch will deploy the code. 
+2) As an emergency backup, you can run 
+```shell
+yarn build
+yarn deploy
+```
+Make sure the yarn build command succeeds. If the build does not succeed you cannot deploy. 
 
 ## Blog
 The blog content is markdown files under the `/blog/` folder. You can create a new blog post by simply adding markdown files here. Take note of the header in the markdown files to specify author, date, post types,...etc. 
