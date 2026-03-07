@@ -68,7 +68,7 @@ const Designs: Design[] = [
     website: 'pathname:///designs/sifive/hifivep550',
     page: 'https://www.sifive.com/boards/hifive-pro-p550',
     author: 'SiFive',
-    tags: ['paid'],
+    tags: ['commercial'],
     minimumVersion: null,
     maintenanceStatus: 'maintained',
     profile: 'rva20',
