@@ -156,6 +156,11 @@ const config: Config = {
           to:"/directory",
         },
         {
+          label:'Chip Design Directory',
+          position:'left',
+          to:"/designs",
+        },
+        {
           label: 'Blog',
           to: '/blog',  
           position: 'left'
