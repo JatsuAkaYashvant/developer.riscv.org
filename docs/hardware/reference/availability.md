@@ -1,0 +1,1 @@
+TODO: create a table, or interactive map that lists which major chips are sanctioned in which countries. For example some chips from china are not available in the US. List this information in an easy to uderstand manner. 
