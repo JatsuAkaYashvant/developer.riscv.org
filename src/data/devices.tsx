@@ -87,7 +87,7 @@ const Devices: Device[] = [
   {
     id: 'deepcomputing.mainboard3',
     name: 'DC-ROMA RISC-V Mainboard III',
-    image: 'deepcomputing/DC-ROMA-RISC-V-Mainboard-III.jpg',
+    image: 'deepcomputing/DC-ROMA-RISC-V-Mainboard-III.jpeg',
     description: 'SpacemiT K3 integrates high-performance RISC-V CPU cores with a powerful AI engine, enabling developers to run modern Linux distributions, accelerate AI workloads, and explore next-generation software stacks on open hardware.',
     preview: null,
     website: 'https://deepcomputing.io/dc-roma-risc-v-mainboard-iii-unveiled-at-fosdem-powered-by-spacemit-k3-for-framework-laptop-13/',
@@ -101,7 +101,7 @@ const Devices: Device[] = [
     {
     id: 'orangepi.rv2',
     name: 'OrangePi RV2',
-    image: 'deepcomputing/DC-ROMA-RISC-V-Mainboard-III.jpg',
+    image: 'orangepi/rv2.jpeg',
     description: 'RISC-V development board with Ky X1 8-core RISC-V AI CPU, providing 2TOPS CPU fusion of general-purpose computing power to support rapid deployment of AI model algorithms. ',
     preview: null,
     website: 'http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-RV2.html',
