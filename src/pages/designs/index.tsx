@@ -273,8 +273,8 @@ function DesignDirectoryFilters() {
           );
         })}
       </ul>*/}
-      {/*Profile Tags*/}
-      <ul className={clsx('clean-list', styles.checkboxList)}>
+      {/*Profile Tags - currently breaking, so removing*/}
+      {/*<ul className={clsx('clean-list', styles.checkboxList)}>
         {ProfileList.map((profile, i) => {
           const {label, description, icon} = Profiles[profile];
           const id = `designdirectory_checkbox_id_${profile}`;
@@ -294,7 +294,7 @@ function DesignDirectoryFilters() {
             </li>
           );
         })}
-      </ul>
+      </ul>*/}
     </section>
   );
 }
