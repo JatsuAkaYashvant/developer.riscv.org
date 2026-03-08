@@ -1300,7 +1300,7 @@ export const Tags: {[type in TagType]: Tag} = {
   favourite: {
     label: translate({message: 'Featured'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.favourite.description',
     }),
     color: '#e9669e',
@@ -1309,7 +1309,7 @@ export const Tags: {[type in TagType]: Tag} = {
   open: {
     label: translate({message: 'Open'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.open.description',
     }),
     color: '#3ecc5f',
@@ -1318,7 +1318,7 @@ export const Tags: {[type in TagType]: Tag} = {
   free: {
     label: translate({message: 'Free'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.free.description',
     }),
     color: '#ca3c25',
@@ -1327,7 +1327,7 @@ export const Tags: {[type in TagType]: Tag} = {
   commercial: {
     label: translate({message: 'Commercial'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.commercial.description',
     }),
     color: '#e6af2e',
@@ -1336,7 +1336,7 @@ export const Tags: {[type in TagType]: Tag} = {
   verilog: {
     label: translate({message: 'Verilog'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.verilog.description',
     }),
     color: '#e6af2e',
@@ -1345,7 +1345,7 @@ export const Tags: {[type in TagType]: Tag} = {
   sail: {
     label: translate({message: 'SAIL'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.sail.description',
     }),
     color: '#e6af2e',
@@ -1354,7 +1354,7 @@ export const Tags: {[type in TagType]: Tag} = {
   fpga: {
     label: translate({message: 'FPGA'}),
     description: translate({
-      message: 'a',
+      message: '',
       id: 'showcase.tag.fpga.description',
     }),
     color: '#e6af2e',
