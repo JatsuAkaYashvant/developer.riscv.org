@@ -69,7 +69,7 @@ function getCardImage(design: Design): string {
       image = require('@site/static/img/favicon.ico').default;
     }
     else{
-     image = require('@site/src/pages/directory/'+design.image).default;
+     image = require('@site/src/pages/designs/'+design.image).default;
     }
   return (
     image
@@ -143,7 +143,8 @@ function DesignDirectoryCard({design}: {design: Design}) {
         <p className={styles.designDirectoryCardProfile}>
           <span className={styles.profileLabel}>Profile:</span><span className={styles.profile}>{design.profile}</span>
         </p>
-        {/*<p className={styles.designDirectoryCardAuthor}><span className={styles.authorLabel}>Author:</span><span className={styles.authorName}>{design.author}</span></p>*/}
+        <p className={styles.designDirectoryCardAuthor}><span className={styles.authorLabel}>Company:</span><span className={styles.authorName}>{design.company}</span></p>
+        <p className={styles.designDirectoryCardAuthor}><span className={styles.authorLabel}>License:</span><span className={styles.authorName}>{design.license}</span></p>
         {/*Removed the maintinance status information*/}
         {/*<DesignDirectoryCardMaintenanceStatus maintenanceStatus={design.maintenanceStatus} />*/}
       </div>

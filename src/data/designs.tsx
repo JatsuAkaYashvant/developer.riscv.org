@@ -25,9 +25,14 @@ export type TagType =
   | 'free'
   | 'commercial'
   | 'verilog'
+  | 'systemverilog'
+  | 'chisel'
+  | 'otherlang'
   | 'sail'
   | 'fpga'
-  | 'vhdl';
+  | 'vhdl'
+  | 'rv64'
+  | 'rv32';
 
 export type MaintainedType = 
   | 'maintained'
@@ -48,10 +53,10 @@ const Designs: Design[] = [
   {
     id: 'microchip.polarfire.icicle',
     name: 'PolarFire SoC Icicle Kit',
-    image: 'microchip/fpga-icicle-kit.png',
+    image: null,
     description: 'The PolarFire SoC Icicle Kit is a low-cost development platform that enables evaluation of the five-core Linux capable RISC-V microprocessor subsystem, innovative Linux, and real-time execution, low-power capabilities, and the rich set of peripherals of the PolarFire SoC FPGA. PolarFire SoC is ideally suited for secure, reliable and power-efficient compute across a wide range of applications including Imaging, AI/ML, Industrial automation, IoT, Wireline Access Networks, Aerospace, and Defense & Automotive. The Icicle kit features onboard memories (LPDDR4, SPI, and eMMC flash) to run Linux off-the-shelf; a multi-rail power sensor to monitor various power domains; PCIe root port, Raspberry pi, and mikroBUS expansion ports and a host of wired connectivity options for quick prototyping and fast time to market. Features: PolarFire SoC FPGA (MPFS250T-FCVG484EES) , SiFive E51 Monitor core (1 x RV64IMAC) , SiFive U54 Application cores (4 x RV64GC) and Secure boot.  Memory and Storage: 2 GB LPDDR4 x 32, 1 Gb SPI flash, 8 GB eMMC flash & SD card slot (multiplexed).Programming & Debugging:Onboard JTAG connector or onboard embedded FlashPro (multiplexed), UART via micro USB, 52 x test points. Interfaces:4 x 12.7 Gbps SERDES, PCIe Gen2 Rootport, 2 x Gigabit Ethernet, Micro USB 2.0 Hi-Speed OTG , 4 x UART (via single micro USB) , 2 x CAN , 2 x SPI , 2 x I²C.',
     preview: null,
-    website: 'pathname:///designs/microchip/polarfile-soc-icicle',
+    website: '',
     page: 'https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES',
     author: 'Microchip',
     tags: ['free','fpga'],
@@ -62,10 +67,10 @@ const Designs: Design[] = [
   {
     id: 'sifive.hifivep550',
     name: 'SiFive HiFive Pro P550',
-    image: 'sifive/hifivep550.png',
+    image: null,
     description: 'RISC-V is inevitable, and the HiFive Pro P550 development system exemplifies that. In partnership, Intel and SiFive are excited to introduce the highest performance RISC-V development board, which is scheduled to be available Summer 2023. HiFive Pro P550 Features & Specifications:The soul of the machine is the Intel Horse Creek SoC, built on the Intel 4 process, that includes a SiFive Performance™ P550 Core Complex, a quad-core application processor featuring a thirteen-stage, triple-issue, out-of-order pipeline with the RISC-V RV64GBC ISA, and on-board DDR5-5600 and PCIe Gen5. Board features (subject to change) include; 16GB DDR5, 2x PCIe expansion slots, 1/10GbE Networking, USB 3, on-board graphics and a remote management ready interface (OCP DC-SCM). This is a premium software development system ideal for developer desktop machines and rack-based build/test/deploy servers for RISC-V software development. RISC-V has no limits. Intel-SiFive Horse Creek SoC containing quad-core SiFive Performance P550 core complex, 16GB DDR5, Gigabit Ethernet Port, USB 3, Industry standard microATX. Expansion Capabilities, Multiple x16 PCIe® Gen 3 Expansion Slot , M.2 M-Key Slot (PCIe Gen 3) for NVME 2280 SSD Module, M.2 E-Key Slot (PCIe Gen 3) for Wi-Fi/Bluetooth Module. If you’re a serious software developer, kernel developer, or Linux hacker, there are a few great reasons to use this board, including performance for the serious software designer; port software to the RISC‑V platform; evaluate the SiFive Performance P550‑MC processor; want multi-core, Linux-capable RISC‑V hardware; need to create the next great thing!',
     preview: null,
-    website: 'pathname:///designs/sifive/hifivep550',
+    website: '',
     page: 'https://www.sifive.com/boards/hifive-pro-p550',
     author: 'SiFive',
     tags: ['commercial'],
@@ -76,10 +81,10 @@ const Designs: Design[] = [
   {
     id: 'OpenHW.corevdevkit',
     name: 'OpenHW CORE-V MCU DevKit',
-    image: 'openhw/Core-V-Dev-Kit-Render-GG-Main.jpeg',
+    image: null,
     description: 'The CORE-V MCU DevKit is a turnkey, open-source development and prototyping platform for the CORE-V MCU System on Chip. The CORE-V MCU DevKit enables makers of IoT and embedded systems to evaluate the performance of the CORE-V MCU, to interconnect with WiFi and the IoT cloud, and to develop and test software using the CORE-V SDK. Features: CORE-V MCU, CV32E40P processor core, Quicklogic ArticPro 2 eFPGA, 4 MB flash memory, Ashling Opella-LD onboard JTAG debug module, USB-C for terminal and onboard debug access, JTAG connector for external debug access, Espressif AWS IoT ExpressLink Module for AWS IoT cloud interconnect, mikroBUS onboard socket, allowing access to a vast range of mikroBUS modules, Himax HM01B0 Ultralow Power CMOS Image Sensor, I2C temperature sensor, Several LEDs, Reset button and general purpose button, Dimensions 75 mm x 100 mm, Power supply via USB-C or barrel connector (5V - 18V in). The CORE-V MCU DevKit is supported by OpenHW Group’s open-source CORE-V MCU SDK. The SDK comprises: Eclipse based IDE, Debug support, FreeRTOS, CORE-V GNU GCC tool chain, Peripheral driver libraries, Example Code.',
     preview: null,
-    website: 'pathname:///designs/openhw/corev-mcu-devkit',
+    website: '',
     page: 'https://www.openhwgroup.org/core-v-devkits/',
     author: 'OpenHW',
     tags: ['verilog'],
@@ -93,7 +98,7 @@ const Designs: Design[] = [
     image:null,
     description: 'Test 1 description 12345',
     preview: null,
-    website: 'pathname:///designs/test/1',
+    website: '',
     page: 'https://riscv.org',
     author: 'riscv',
     tags: ['vhdl', 'commercial'],
@@ -107,7 +112,7 @@ const Designs: Design[] = [
     image:null,
     description: 'This is yet another test design',
     preview: null,
-    website: 'pathname:///designs/test/2',
+    website: '',
     page: 'https://riscv.org',
     author: 'riscv',
     tags: ['free','fpga'],
@@ -121,13 +126,46 @@ const Designs: Design[] = [
     image:null,
     description: 'ipsum lorum mcawesome sauce',
     preview: null,
-    website: 'pathname:///designs/test/3',
+    website: '',
     page: 'https://riscv.org',
     author: 'riscv',
     tags: ['fpga','open'],
     minimumVersion: null,
     maintenanceStatus: 'unknown', 
     profile: 'unknown',
+  },
+
+  {
+    name: "XuanTie C906",
+    company: "T-Head (Alibaba group)",
+    image: "img/alibaba-group-china.svg",
+    license: "Alibaba commercial license",
+    tags: ['commercial', 'verilog'],
+    website: "https://occ.t-head.cn/vendor/cpu/index?id=3817197695983423488",
+    description: "UserSpec: RV64IMA[FD]C[V] + SV39 + ISA Extension + Memory model Extension \rPrivSpec: 1.1",
+    capability: "RV64",
+  },
+
+  {
+    name: "XuanTie C910",
+    company: "T-Head (Alibaba group)",
+    image: "img/alibaba-group-china.svg",
+    license: "Alibaba commercial license",
+    tags: ['commercial', 'verilog'],
+    website: "https://www.t-head.cn/product/c910?spm=a2ouz.12987052.0.0.5c5c6245WIbjoG",
+    description: "UserSpec: RV64GCV + SV39 + ISA Extension + Memory model Extension + multi-core & multi-cluster(16 cores maximum) \rPrivSpec: 1.1",
+    capability: "RV64",
+  },
+
+  {
+    name: "XuanTie E902",
+    company: "T-Head (Alibaba group)",
+    image: "img/alibaba-group-china.svg",
+    license: "Alibaba commercial license",
+    tags: ['commercial', 'verilog'],
+    website: "https://www.t-head.cn/product/e902?spm=a2ouz.12987052.0.0.5c5c6245R2yhfA",
+    description: "UserSpec: RV32EMC/IMC/EC \rPrivSpec: 1.1",
+    capability: "RV32",
   },
   /*
   Pro Tip: add your design in alphabetical order.
@@ -243,7 +281,7 @@ export const MaintenanceStatuses: {[type in MaintainedType]: MaintenanceStatus} 
     label: translate({message: 'Maintained'}),
     description: translate({
       message:
-        'This design is maintained by its author and is compatible with the latest Docusaurus stable version.',
+        'This design is maintained and is compatible with the latest Docusaurus stable version.',
       id: 'showcase.maintenancestatus.maintained.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleCheck} color="#28a745" style={{marginLeft: 8}}/>,
@@ -252,7 +290,7 @@ export const MaintenanceStatuses: {[type in MaintainedType]: MaintenanceStatus} 
     label: translate({message: 'Unmaintained'}),
     description: translate({
       message:
-        'This design is not maintained by its author and is likely not compatible with the latest Docusaurus stable version.',
+        'This design is not maintained and is likely not compatible with the latest Docusaurus stable version.',
       id: 'showcase.maintenancestatus.unmaintained.description',
     }),
     icon: <FontAwesomeIcon icon={faCircleXmark} color="#dc3545" style={{marginLeft: 8}}/>,
