@@ -1341,12 +1341,53 @@ export const Tags: {[type in TagType]: Tag} = {
     }),
     color: '#e6af2e',
   },
+  systemverilog: {
+    label: translate({message: 'System Verilog'}),
+    description: translate({
+      message: '',
+      id: 'showcase.tag.systemverilog.description',
+    }),
+    color: '#e6af2e',
+  },
 
   sail: {
     label: translate({message: 'SAIL'}),
     description: translate({
       message: '',
       id: 'showcase.tag.sail.description',
+    }),
+    color: '#e6af2e',
+  },
+
+    chisel: {
+    label: translate({message: 'Chisel'}),
+    description: translate({
+      message: '',
+      id: 'showcase.tag.chisel.description',
+    }),
+    color: '#e6af2e',
+  },
+    otherlang: {
+    label: translate({message: 'Other Language'}),
+    description: translate({
+      message: '',
+      id: 'showcase.tag.otherlang.description',
+    }),
+    color: '#e6af2e',
+  },
+    rv64: {
+    label: translate({message: 'RV64'}),
+    description: translate({
+      message: '',
+      id: 'showcase.tag.rv64.description',
+    }),
+    color: '#e6af2e',
+  },
+    rv32: {
+    label: translate({message: 'RV32'}),
+    description: translate({
+      message: '',
+      id: 'showcase.tag.rv32.description',
     }),
     color: '#e6af2e',
   },
