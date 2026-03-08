@@ -1,5 +1,5 @@
 ---
-id: golen_model_simulator
+id: golden_model_simulator
 title: Golden Model Simulator
 ---
 

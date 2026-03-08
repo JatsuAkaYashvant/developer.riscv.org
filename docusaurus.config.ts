@@ -156,12 +156,12 @@ const config: Config = {
           to:"/directory",
         },
         {
-          label:'Chip Design Directory',
+          label:'IP Core Directory',
           position:'left',
           to:"/designs",
         },
         {
-          label: 'Blog',
+          label: 'Developer Blog',
           to: '/blog',  
           position: 'left'
         },

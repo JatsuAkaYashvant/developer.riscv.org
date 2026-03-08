@@ -1,5 +1,5 @@
 ---
-id: profile+compliance
+id: profile_compliance
 title: Profile Compliance
 ---
 
