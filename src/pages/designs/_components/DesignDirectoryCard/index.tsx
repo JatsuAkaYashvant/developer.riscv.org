@@ -30,7 +30,7 @@ import styles from './styles.module.css';
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
   ({label, color, description}, ref) => (
     <li ref={ref} className={styles.tag} title={description}>
-      <span className={styles.textLabel}>{label.toLowerCase()}</span>
+      <span className={styles.textLabel}>{label}</span>
       <span className={styles.colorLabel} style={{backgroundColor: color}} />
     </li>
   ),
@@ -141,7 +141,7 @@ function DesignDirectoryCard({design}: {design: Design}) {
         </div>
         <p className={styles.designDirectoryCardBody}>{design.description}</p>
         <p className={styles.designDirectoryCardProfile}>
-          <span className={styles.profileLabel}>Profile:</span><span className={styles.profile}>{design.profile}</span>
+          <span className={styles.profileLabel}>Capability:</span><span className={styles.profile}>{design.capability}</span>
         </p>
         <p className={styles.designDirectoryCardAuthor}><span className={styles.authorLabel}>Company:</span><span className={styles.authorName}>{design.company}</span></p>
         <p className={styles.designDirectoryCardAuthor}><span className={styles.authorLabel}>License:</span><span className={styles.authorName}>{design.license}</span></p>
