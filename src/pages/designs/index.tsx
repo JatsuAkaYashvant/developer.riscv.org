@@ -125,7 +125,7 @@ function filterDesigns(
     filteredDesigns = filteredDesigns;
   }
   if (selectedTags.length > 0) {
-    filteredDesigns = designs.filter((design) => {
+    filteredDesigns = design.filter((design) => {
       if (design.tags.length === 0) {
         return false;
       }
