@@ -98,7 +98,21 @@ const Devices: Device[] = [
     maintenanceStatus: 'unknown', 
     profile: 'rva23',
   },
-    {
+  {
+    id: 'banana.pi.f3',
+    name: "Banana Pi F3',
+    image: 'bananapi/f3/banana_pi_f3.jpg',
+    description: 'A cool board',
+    preview: null,
+    website: 'https://docs.banana-pi.org/en/BPI-F3/BananaPi_BPI-F3',
+    page: 'https://docs.banana-pi.org/en/BPI-F3/BananaPi_BPI-F3',
+    author: 'Banana Pi',
+    tags: ['favourite'],
+    minimumVersion: null,
+    maintenanceStatus: 'unknown',
+    profile: 'rva20',
+  },
+  {
     id: 'orangepi.rv2',
     name: 'OrangePi RV2',
     image: 'orangepi/rv2.jpeg',
