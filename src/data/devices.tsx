@@ -100,7 +100,7 @@ const Devices: Device[] = [
   },
   {
     id: 'banana.pi.f3',
-    name: "Banana Pi F3',
+    name: 'Banana Pi F3',
     image: 'bananapi/f3/banana_pi_f3.jpg',
     description: 'A cool board',
     preview: null,
