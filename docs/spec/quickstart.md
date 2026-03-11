@@ -3,6 +3,19 @@ title: Get Started
 sidebar_position: 2
 ---
 
+TODO: create a quickstart that covers
+- Members vs Insiders
+- Basics of RISC-V Instruciton Set
+- Explain how to get started (point to QUEMU /SPIKE / other simulator getting started guides)
+- Concept of Profiles
+- Concept of extensions
+
+
+The first place to start with RISC-V is the [Introduciton to RISC-V](https://www.edx.org/learn/computer-science/the-linux-foundation-introduction-to-risc-v) course on EdX. Start here to learn the basics of RISC-V. 
+
+
+
+
 # Introduction {#introduction}
 
 This document is intended to give a member’s overview of the RISC-V technical organizations. The intended audience is both for new members as well as a reference for existing members.
