@@ -102,7 +102,7 @@ const Devices: Device[] = [
     id: 'banana.pi.f3',
     name: 'Banana Pi F3',
     image: 'bananapi/f3/banana_pi_f3.jpg',
-    description: 'A cool board',
+    description: 'Banana Pi BPI-F3: Powered by the SpacemiT K1 (an 8-core RISC-V SoC), this board is designed for high-performance computing, supporting RVA22 and RVV 1.0.',
     preview: null,
     website: 'https://docs.banana-pi.org/en/BPI-F3/BananaPi_BPI-F3',
     page: 'https://docs.banana-pi.org/en/BPI-F3/BananaPi_BPI-F3',
@@ -110,7 +110,7 @@ const Devices: Device[] = [
     tags: ['favourite'],
     minimumVersion: null,
     maintenanceStatus: 'unknown',
-    profile: 'rva20',
+    profile: 'rva22',
   },
   {
     id: 'orangepi.rv2',
@@ -309,10 +309,10 @@ const Devices: Device[] = [
 
   },
   {
-    id: "risc-v international.milk-v jupiter",
+    id: "milkv.jupiter",
     name: "Milk-V Jupiter",
-    company: "RISC-V International",
-    description: "Milk-V Jupiter, powered by the Spacemit K1/M1 SoC, is the world's first Mini ITX device to support both RVA22 and RVV1.0. This device integrates a standard PCIe connector, supporting common PCIe devices such as graphics cards, PCIe to SATA adapters, and network cards. It features dual Gigabit Ethernet interfaces, onboard Wi-Fi 6/BT 5.2, and supports NVMe SSDs, making it an ideal choice for an entry-level RISC-V desktop.",
+    company: "Milk-V",
+    description: "Powered by the Spacemit K1/M1 SoC, is the world's first Mini ITX device to support both RVA22 and RVV1.0. This device integrates a standard PCIe connector, supporting common PCIe devices such as graphics cards, PCIe to SATA adapters, and network cards. It features dual Gigabit Ethernet interfaces, onboard Wi-Fi 6/BT 5.2, and supports NVMe SSDs, making it an ideal choice for an entry-level RISC-V desktop.",
     website: "https://milkv.io/jupiter",
     page: "https://milkv.io/jupiter",
     //image: "",
@@ -410,7 +410,17 @@ const Devices: Device[] = [
     image: null,
     tags:[],
     profile: 'unknown',
-
+  },
+    {
+    id: "spacemit.musebook",
+    name: "SpacemiT MUSE Book",
+    company: "SpacemiT",
+    description: "MUSE Book is a RISC-V laptop powered by SpacemiT’s 8-core RISC-V AI-CPU M1. It comes pre-installed with the self-developed Bianbu Operating System and includes the SpacemiT AI Development Kit. With seamless migration support for AI projects developed on ONNX Runtime, it aims to offer a more efficient and user-friendly RISC-V development platform for RISC-V enthusiasts, AI developers, tech innovators,researchers, and more.",
+    website: "https://store.deepcomputing.io/products/muse-book",
+    page: "https://store.deepcomputing.io/products/muse-book",
+    image: null,
+    tags:[],
+    profile: 'unknown',
   },
   {
     id: "sifive.hifivep550devsystem",
@@ -527,7 +537,17 @@ const Devices: Device[] = [
     image: null,
     tags:[],
     profile: 'unknown',
-
+  },
+  {
+    id: "sipeed.licheerv",
+    name: "Sipeed LicheeRV - Nezha CM",
+    company: "Sipeed",
+    description: "A System-on-Module (SoM) based on the T-Head C906 core.",
+    website: "https://www.riscvschool.com/2023/03/09/t-head-xuantie-c906-risc-v/",
+    page: "https://www.riscvschool.com/2023/03/09/t-head-xuantie-c906-risc-v/",
+    image: null,
+    tags:[],
+    profile: 'unknown',
   },
   /*
   Pro Tip: add your device in alphabetical order.
