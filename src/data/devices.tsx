@@ -43,6 +43,34 @@ export type ProfileType =
 // prettier-ignore
 const Devices: Device[] = [
   {
+    id: 'beagleboard.beaglevahead',
+    name: 'BeagleV®-Ahead',
+    image: 'beagleboardv-ahead/beaglevahead.png',
+    description: 'BeagleV®-Ahead is an open-source RISC-V single board computer (SBC) powered by the Alibaba T-Head TH1520 SoC. It features a 2GHz quad-core RISC-V 64GC Xuantie C910 processor, a 4TOPS@INT8 NPU, and a 50GFLOPS Imagination BXM-4-64 GPU. Designed as an affordable, pocket-sized computer, it includes 4GB LPDDR4 memory, 16GB eMMC storage, Gigabit Ethernet, and dual-band WiFi/Bluetooth. The board retains the classic BeagleBone Black cape header pins, allowing developers to easily stack capes and explore the RISC-V ISA with robust hardware acceleration.',
+    preview: null,
+    website: 'pathname:///directory/beagleboard/beaglevahead',
+    page: 'https://beagleboard.org/beaglev-ahead',
+    author: 'BeagleBoard',
+    tags: ['profile_compliant'],
+    minimumVersion: null,
+    maintenanceStatus: 'maintained',
+    profile: 'rva20',
+  },
+  {
+    id: 'beagleboard.beaglevfire',
+    name: 'BeagleV®-Fire',
+    image: 'beagleboardv-fire/beaglevfire.png',
+    description: 'BeagleV®-Fire is a revolutionary single-board computer (SBC) powered by the Microchip PolarFire® MPFS025T 5x core RISC-V System on Chip (SoC) with FPGA fabric. The microprocessor subsystem features 1x 64-bit RV64IMAC monitor/boot core (E51) and 4x 64-bit RV64GC Application cores (U54-MC) running up to 667 MHz. Alongside its 23K logic element FPGA fabric, the board includes the same P8 & P9 cape header pins as the BeagleBone Black, allowing developers to stack capes to expand its capability. It offers unparalleled opportunities for developers, hobbyists, and researchers to explore and experiment with both RISC-V technology and versatile FPGA hardware.',
+    preview: null,
+    website: 'pathname:///directory/beagleboard/beaglevfire',
+    page: 'https://beagleboard.org/beagleV-fire',
+    author: 'BeagleBoard',
+    tags: ['fpga', 'profile_compliant'],
+    minimumVersion: null,
+    maintenanceStatus: 'maintained',
+    profile: 'rva20',
+  },
+  {
     id: 'microchip.polarfire.icicle',
     name: 'PolarFire SoC Icicle Kit',
     image: 'microchip/fpga-icicle-kit.png',
@@ -56,10 +84,24 @@ const Devices: Device[] = [
     maintenanceStatus: 'maintained',
     profile: 'rvi20',
   },
+   {
+    id: 'sifive.hifivepremierp550',
+    name: 'SiFive HiFive Premier P550',
+    image: 'sifive-premier/hifivepremierp550.png',
+    description: 'The HiFive Premier P550 provides a high-performance Linux development platform in a Mini-DTX form factor designed to accelerate the next wave of RISC-V development. Powered by the ESWIN EIC7700X SoC, the board integrates a SiFive Performance P550 quad-core 64-bit out-of-order CPU cluster implementing the RISC-V RV64 architecture. This development system delivers strong compute capability for Linux applications, embedded systems development, and software ecosystem enablement on RISC-V. The HiFive Premier P550 is designed for developers building high-performance RISC-V applications, enabling rapid prototyping, operating system development, and software porting. With its powerful CPU complex and flexible platform architecture, the board allows engineers, kernel developers, and system architects to explore next-generation RISC-V workloads and bring advanced projects to life.',
+    preview: null,
+    website: 'pathname:///directory/sifive/hifivepremierp550',
+    page: 'https://www.sifive.com/boards/hifive-premier-p550',
+    author: 'SiFive',
+    tags: ['asic','profile_compliant'],
+    minimumVersion: null,
+    maintenanceStatus: 'maintained',
+    profile: 'rva20',
+  },
   {
     id: 'sifive.hifivep550',
     name: 'SiFive HiFive Pro P550',
-    image: 'sifive/hifivep550.png',
+    image: 'sifive-pro/hifivep550.png',
     description: 'RISC-V is inevitable, and the HiFive Pro P550 development system exemplifies that. In partnership, Intel and SiFive are excited to introduce the highest performance RISC-V development board, which is scheduled to be available Summer 2023. HiFive Pro P550 Features & Specifications:The soul of the machine is the Intel Horse Creek SoC, built on the Intel 4 process, that includes a SiFive Performance™ P550 Core Complex, a quad-core application processor featuring a thirteen-stage, triple-issue, out-of-order pipeline with the RISC-V RV64GBC ISA, and on-board DDR5-5600 and PCIe Gen5. Board features (subject to change) include; 16GB DDR5, 2x PCIe expansion slots, 1/10GbE Networking, USB 3, on-board graphics and a remote management ready interface (OCP DC-SCM). This is a premium software development system ideal for developer desktop machines and rack-based build/test/deploy servers for RISC-V software development. RISC-V has no limits. Intel-SiFive Horse Creek SoC containing quad-core SiFive Performance P550 core complex, 16GB DDR5, Gigabit Ethernet Port, USB 3, Industry standard microATX. Expansion Capabilities, Multiple x16 PCIe® Gen 3 Expansion Slot , M.2 M-Key Slot (PCIe Gen 3) for NVME 2280 SSD Module, M.2 E-Key Slot (PCIe Gen 3) for Wi-Fi/Bluetooth Module. If you’re a serious software developer, kernel developer, or Linux hacker, there are a few great reasons to use this board, including performance for the serious software designer; port software to the RISC‑V platform; evaluate the SiFive Performance P550‑MC processor; want multi-core, Linux-capable RISC‑V hardware; need to create the next great thing!',
     preview: null,
     website: 'pathname:///directory/sifive/hifivep550',
@@ -144,6 +186,7 @@ export type Device = {
   author: string | null;
   tags: TagType[];
   maintenanceStatus: MaintainedType; // Any device with a known vulnerability is considered unmaintained, any device incompatible with latest Docusaurus stable version is considered unmaintained.
+  profile: ProfileType;
 };
 
 export type Tag = {
